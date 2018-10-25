@@ -3,9 +3,10 @@
 <p style="text-align: center;">&nbsp;</p>
 <p align="center">
  
-    <a href="./license.md">
+   <!-- <a href="./license.md">
         <img src="/IMAGES/JPLOGO.webp" alt="JP Morgan Code for Good 2018">
-    </a>
+    </a> -->
+<img alt="JP Morgan CODE FOR GOOD 2018" src="/IMAGES/JPLOGO.webp">
 </p>
 
 
