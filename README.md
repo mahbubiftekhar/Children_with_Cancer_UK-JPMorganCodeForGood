@@ -3,9 +3,9 @@
 <p style="text-align: center;">&nbsp;</p>
 <p align="center">
  
-  <!--  <a href="./license.md">
-        <img src="https://img.shields.io/badge/License-MIT-lightgrey.svg" alt="License: MIT">
-    </a> -->
+    <a href="./license.md">
+        <img src="/IMAGES/JPLOGO.webp" alt="JP Morgan Code for Good 2018">
+    </a>
 </p>
 
 
