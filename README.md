@@ -3,9 +3,9 @@
 <p style="text-align: center;">&nbsp;</p>
 <p align="center">
  
-    <a href="./license.md">
+  <!--  <a href="./license.md">
         <img src="https://img.shields.io/badge/License-MIT-lightgrey.svg" alt="License: MIT">
-    </a>
+    </a> -->
 </p>
 
 
@@ -30,8 +30,8 @@ The Android app is available for download from the [Play Store](https://play.goo
 
 
 ## Technologies Used 
-The app has been developed using [Koltin](https://kotlinlang.org/) a modern programmer friendly language used mainly for Android Development. It was decided to create the app using Kotlin due to many helper features such as variable interpolation, higher-order functions and null safety. As Kotlin is compiled to JVM byte-code, it is also 100% inter-operable with Java! [Android Studio](https://developer.android.com/studio/) 3.1.2 was used throughout development.
-
+<!--The app has been developed using [Koltin](https://kotlinlang.org/) a modern programmer friendly language used mainly for Android Development. It was decided to create the app using Kotlin due to many helper features such as variable interpolation, higher-order functions and null safety. As Kotlin is compiled to JVM byte-code, it is also 100% inter-operable with Java! [Android Studio](https://developer.android.com/studio/) 3.1.2 was used throughout development.
+-->
 ## Software Developers
 
 * **[Alex Shand](https://github.com/Alex-Shand)** 
