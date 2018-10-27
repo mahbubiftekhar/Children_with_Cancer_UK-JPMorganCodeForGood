@@ -4,7 +4,7 @@ from flask_sqlalchemy import SQLAlchemy
 
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////tmp/test.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////tmp/chatroom.db'
 db = SQLAlchemy(app)
 
 class Chatroom(db.Model):
@@ -12,7 +12,6 @@ class Chatroom(db.Model):
 	name = db.Column(db.String(150), nullable = False)
 	creationDate = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
 	lastUpdatedBy = db.Column(db.DateTime, nullable=False,default=datetime.utcnow)
-
 	colour = db.Column(db.String(150), nullable=False)
 	chattype = db.Column(db.String(150), nullable=False)
 
