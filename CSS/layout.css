@@ -1,0 +1,13 @@
+ body {
+     display: flex;
+     min-height: 100vh;
+     flex-direction: column;
+ }
+ main {
+     flex: 1 0 auto;
+ }
+
+.chat_bar {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
