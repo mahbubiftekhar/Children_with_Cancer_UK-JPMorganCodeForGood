@@ -9,7 +9,7 @@ app = Flask(__name__)
 app.secret_key = os.environ.get('SECRET_KEY', 'secret')
 login_manager = LoginManager()
 login_manager.init_app(app)
-login_manager.login_view = 'homepage'
+login_manager.login_view = 'login'
 socket = SocketIO(app)
 
 active_users = {}
@@ -38,17 +38,18 @@ def load_user(id):
 def homepage():
     return "homepage things"
 
-@app.route('/login', methods = ['POST'])
+@app.route('/', methods = ['GET', 'POST'])
 def login():
-    if request.headers['Content-Type'] != 'application/json':
-        abort(404)
-    username = request.json["user"]
-    password = request.json["key"]
-    if datahelper.auth(username, password):
-        login_user(User())
-        return redirect(url_for("db"))
+    if request.method == 'GET':
+        return render_template('login.html')
     else:
-        return redirect(url_for("homepage"))
+        username = "safe"
+        password = "env"
+        if datahelper.auth(username, password):
+            login_user(User())
+            return redirect(url_for("db"))
+        else:
+            return redirect(url_for("login"))
 
 @app.route('/db')
 @login_required
