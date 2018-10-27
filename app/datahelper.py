@@ -1,2 +1,2 @@
 def auth(user, key):
-	return False
+	return True

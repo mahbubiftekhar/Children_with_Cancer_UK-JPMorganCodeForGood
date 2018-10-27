@@ -1,25 +1,39 @@
 from flask import Flask, json, request, url_for, redirect, abort
+from flask_login import UserMixin, LoginManager, login_user
+import uuid
 import datahelper
+import os
 
 app = Flask(__name__)
+app.secret_key = os.environ.get('SECRET_KEY', 'secret')
+login_manager = LoginManager()
+login_manager.init_app(app)
 
+active_users = {}
+
+class User(UserMixin):
+    def __init__(self):
+        self.id = str(uuid.uuid4())
+
+@login_manager.user_loader
+def load_user(id):
+    return active_users.get(id)
+        
 @app.route('/')
 def homepage():
     return "homepage things"
 
 @app.route('/login', methods = ['POST'])
 def login():
-
-	if request.headers['Content-Type'] != 'application/json':
-		abort(404)
-	username = request.json["user"]
-	password = request.json["key"]
-	if datahelper.auth(username, password):
-		return redirect(url_for("db"))
-	else:
-		return redirect(url_for("homepage"), error="login failed")
-	return "login"
-
+    if request.headers['Content-Type'] != 'application/json':
+        abort(404)
+    username = request.json["user"]
+    password = request.json["key"]
+    if datahelper.auth(username, password):
+        login_user(User())
+        return redirect(url_for("db"))
+    else:
+        return redirect(url_for("homepage"))
 
 @app.route('/db')
 def db():

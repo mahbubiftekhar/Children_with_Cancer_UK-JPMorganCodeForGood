@@ -2,3 +2,4 @@
 *.pem
 venv/
 flask/
+__pycache__/
