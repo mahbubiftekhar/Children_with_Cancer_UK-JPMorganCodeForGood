@@ -47,22 +47,27 @@ def kb():
     return "wiki"
 
 @app.route('/logout')
+@login_required
 def logout():
     return "bye bye"
 
 @app.route('/allChat')
+@login_required
 def allChat():
     return "chatrooms"
 
 @app.route('/oneChat/<chatyppl>')
+@login_required
 def oneChat(name):
     return ""
 
 @app.route('/buddy')
+@login_required
 def buddy():
     return "ppl i liked"
 
 @app.route('/forum')
+@login_required
 def forum():
     return "this is a forum, sorry i couldn't think of something funny"
 
