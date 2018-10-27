@@ -86,7 +86,7 @@ def all_chat():
 @app.route('/chat/<int:id>', methods = ['GET', 'POST'])
 @login_required
 def chat(id):
-    if request.method = 'GET':
+    if request.method == 'GET':
         chatroom = get_chatroom_by_id(id)
         chatroom.users.append(current_user)
         current_user.chat_id = id
