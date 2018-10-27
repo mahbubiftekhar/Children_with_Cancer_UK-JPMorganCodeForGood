@@ -1,5 +1,5 @@
 from flask import Flask, json, request, url_for, redirect, abort
-from flask_login import UserMixin, LoginManager, login_user
+from flask_login import UserMixin, LoginManager, login_user, login_required
 import uuid
 import datahelper
 import os
@@ -8,6 +8,8 @@ app = Flask(__name__)
 app.secret_key = os.environ.get('SECRET_KEY', 'secret')
 login_manager = LoginManager()
 login_manager.init_app(app)
+login_manager.login_view = 'homepage'
+
 
 active_users = {}
 
@@ -36,6 +38,7 @@ def login():
         return redirect(url_for("homepage"))
 
 @app.route('/db')
+@login_required
 def db():
     return "good boi, logged in"
 
