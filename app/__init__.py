@@ -1,5 +1,5 @@
 from flask import Flask, json, request, url_for, redirect, abort
-from flask_login import UserMixin, LoginManager, login_user, login_required
+from flask_login import UserMixin, LoginManager, login_user, login_required, current_user, logout_user
 import uuid
 import datahelper
 import os
@@ -16,6 +16,12 @@ active_users = {}
 class User(UserMixin):
     def __init__(self):
         self.id = str(uuid.uuid4())
+        self.chat_id = None
+
+def leave_chat(user):
+    chatroom = get_chatroom_by_id(user.chat_id)
+    user.chat_id = None
+    chatroom.users.remove(user)
 
 @login_manager.user_loader
 def load_user(id):
@@ -46,20 +52,38 @@ def db():
 def kb():
     return "wiki"
 
+@app.route('/profile')
+@login_required
+def profile():
+    return "profile"
+
 @app.route('/logout')
 @login_required
 def logout():
-    return "bye bye"
+    leave_chat(current_user)
+    logout_user()
+    return redirect(url_for('homepage'))
 
-@app.route('/allChat')
+@app.route('/allchat')
 @login_required
-def allChat():
+def all_chat():
+    chatrooms = get_free_chatrooms(get_chatrooms())
     return "chatrooms"
 
-@app.route('/oneChat/<chatyppl>')
+@app.route('/chat/<int:chatyppl>')
 @login_required
-def oneChat(name):
-    return ""
+def chat(id):
+    chatroom = get_chatroom_by_id(id)
+    chatroom.users.append(current_user)
+    current_user.chat_id = id
+    return f'In chat {id}'
+
+@app.route('/chat/<int:chatyppl>/post', methods = ['POST'])
+@login_required
+def post_chat(id):
+    chatroom = get_chatroom_by_id(id)
+    message = request.data
+    chatroom.messages.append(message)
 
 @app.route('/buddy')
 @login_required
