@@ -6,7 +6,7 @@ class Chatroom():
         self.messages = []
 
 def auth(user, key):
-    return True
+    return False
 
 def get_chatrooms():
     return []
