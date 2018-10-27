@@ -53,9 +53,19 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
 <!-- !PAGE CONTENT! -->
 <div class="w3-main" style="margin-left:270px">
   <!-- Push down content on small screens -->
-  <div class="w3-hide-large" style="margin-top:128px"></div>
+  <div class="contact-form">
+  						<strong>Add to my TODO list</strong>
+  						<form name="contact-form" method="post" action="assets/php/sendemail.php">
+  							<div class="form-group">
+  								<label for="InputName1">Message</label>
+  								<input type="text" name="name" class="form-control" id="InputName1" required="">
+  							</div>
+
+  							<button type="submit" name="submit" class="btn btn-primary">ADD TO TODO LIST</button>
+  						</form>
+  					</div>
 </div>
-  
+
 
 <!-- Footer -->
 
@@ -100,6 +110,6 @@ function w3_close() {
 </script>
 
 </body>
-  
+
 
 </html>
