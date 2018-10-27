@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 from flask import Flask, json, request, url_for, redirect, abort, render_template
 from flask_login import UserMixin, LoginManager, login_user, login_required, current_user, logout_user
 import uuid
@@ -32,13 +34,14 @@ def login():
     if request.method == 'GET':
         return render_template('login.html')
     else:
-        username = "safe"
-        password = "env"
-        if datahelper.auth(username, password):
-            login_user(User())
-            return redirect(url_for("db"))
-        else:
-            return redirect(url_for("login"))
+        return render_template('all_chat.html')
+        # username = "safe"
+        # password = "env"
+        # if datahelper.auth(username, password):
+        #     login_user(User())
+        #     return redirect(url_for("db"))
+        # else:
+        #     return redirect(url_for("login"))
 
 @app.route('/db')
 @login_required
