@@ -1,11 +1,25 @@
-from flask import Flask
+from flask import Flask, json, request, url_for, redirect, abort
+import datahelper
 
 app = Flask(__name__)
 
 @app.route('/')
-@app.route('/login')
+def homepage():
+    return "homepage things"
+
+@app.route('/login', methods = ['POST'])
 def login():
-    return "login "
+
+	if request.headers['Content-Type'] != 'application/json':
+		abort(404)
+	username = request.json["user"]
+	password = request.json["key"]
+	if datahelper.auth(username, password):
+		return redirect(url_for("db"))
+	else:
+		return redirect(url_for("homepage"), error="login failed")
+	return "login"
+
 
 @app.route('/db')
 def db():
