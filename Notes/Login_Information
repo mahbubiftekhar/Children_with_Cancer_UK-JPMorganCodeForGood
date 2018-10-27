@@ -1,0 +1,6 @@
+Login Information
+-----------------
+
+application/x-www-form-urlencoded 
+
+ImmutableMultiDict([('inputEmail', 'lkjs@gmail.com'), ('inputPassword', 'kljl')])

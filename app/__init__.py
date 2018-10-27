@@ -1,4 +1,4 @@
-from flask import Flask, json, request, url_for, redirect, abort
+from flask import Flask, json, request, url_for, redirect, abort, render_template
 from flask_login import UserMixin, LoginManager, login_user, login_required, current_user, logout_user
 import uuid
 import datahelper
@@ -26,22 +26,22 @@ def leave_chat(user):
 @login_manager.user_loader
 def load_user(id):
     return active_users.get(id)
-        
-@app.route('/')
-def homepage():
-    return "homepage things"
 
-@app.route('/login', methods = ['POST'])
+@app.route('/', methods = ['GET', 'POST'])
 def login():
-    if request.headers['Content-Type'] != 'application/json':
-        abort(404)
-    username = request.json["user"]
-    password = request.json["key"]
-    if datahelper.auth(username, password):
-        login_user(User())
-        return redirect(url_for("db"))
+    if request.method == 'GET':
+        return render_template('login.html')
     else:
-        return redirect(url_for("homepage"))
+        return str(request.form)
+        # if request.headers['Content-Type'] != 'application/json':
+        #     abort(404)
+        # username = request.json["user"]
+        # password = request.json["key"]
+        # if datahelper.auth(username, password):
+        #     login_user(User())
+        #     return redirect(url_for("db"))
+        # else:
+        #     return redirect(url_for("login"))
 
 @app.route('/db')
 @login_required
@@ -77,13 +77,13 @@ def chat(id):
     chatroom.users.append(current_user)
     current_user.chat_id = id
     return f'In chat {id}'
-
-@app.route('/chat/<int:chatyppl>/post', methods = ['POST'])
-@login_required
-def post_chat(id):
-    chatroom = get_chatroom_by_id(id)
-    message = request.data
-    chatroom.messages.append(message)
+#
+# @app.route('/chat/<int:chatyppl>/post', methods = ['POST'])
+# @login_required
+# def post_chat(id):
+#     chatroom = get_chatroom_by_id(id)
+#     message = request.data
+#     chatroom.messages.append(message)
 
 @app.route('/buddy')
 @login_required
