@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<title>W3.CSS Template</title>
+<title>Caring for Cancer</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -76,42 +76,69 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
       	<div class="chat_client_only">
       		<div class = "buddies_themselves">
 
-      		 <a id = "chatTitle" style="width:300px;">Chat</a>
-      		 <img style="margin-left = 20px;" class = "online_logo" src = "down_arrow.png">
+      		 <a id = "chatTitle" style="width:300px;">Buddies</a>
 
       		</div>
+          <div class = "black_line" style="height:2px;"></div> <!-- seperate the chats -->
+          <div >
+            <a class="chat_section" style="margin-right: 65%;">Chat</a>
+            <img class = "online_logo" src = "../static/Images/down-arrow.svg">
+          </div>
+          <div class = "black_line" style="height:2px;"></div> <!-- seperate the chats -->
 
       		<div class="first_sample_row">
-      			<a class = "chatName" style="margin-right: 20%;color : black;font-size: 20px;">Leukemia</a>
-      			<a class = "people"> 3 active</a>
-      			<img class = "online_logo" src = "online_circle.png">
+      			<a class = "chatName" style="margin-right: 63%;color : black;font-size: 20px;">Leukemia</a>
+      			<a class = "people">3 active</a>
+      			<img class = "online_logo" src = "../static/Images/online_circle.png" >
       		</div>
       		<div class = "black_line" style="height:2px;"></div> <!-- seperate the chats -->
       		<div class="second_sample_row">
-      			<a class = "chatName2" style="margin-right: 20%;color : black; font-size: 20px;">Cancer &nbsp &nbsp	</a>
-      			<a class = "people"> 8 active</a>
-      			<img class = "online_logo" src = "online_circle.png">
+      			<a class = "chatName2" style="margin-right: 46%;color : black; font-size: 20px;">Support Group</a>
+      			<a class = "people">7 active</a>
+      			<img class = "online_logo" src = "../static/Images/online_circle.png">
       		</div>
       		<div class = "black_line" style="height:2px;"></div>
 
       		<div class="second_sample_row">
-      			<a class = "chatName2" style="margin-right: 0%;color : black; font-size: 20px;">Athlete's Foot &nbsp</a>
-      			<a class = "people"> 0 Active</a>
-      			<img class = "online_logo" src = "offline_circle.png">
+      			<a class = "chatName2" style="margin-right: 45%;color : black; font-size: 20px;">Survival Stories</a>
+      			<a class = "people">0 Active</a>
+      			<img class = "online_logo" src = "../static/Images/offline_circle.png">
       		</div>
       		<div class = "black_line" style="height:2px;"></div>
+
+          <div class = "black_line" style="height:2px;"></div> <!-- seperate the chats -->
+          <div >
+            <a class="chat_section" style="margin-right: 47%;">Buddy List</a>
+            <img class = "online_logo" src = "../static/Images/down-arrow.svg">
+          </div>
+          <div class = "black_line" style="height:2px;"></div> <!-- seperate the chats -->
+
+          <div class="first_sample_row">
+            <a class = "chatName" style="margin-right: 30%;color : black;font-size: 20px;">Sally Ann</a>
+            <a class = "people">Active</a>
+            <img class = "online_logo" src = "../static/Images/online_circle.png" >
+          </div>
+          <div class = "black_line" style="height:2px;"></div> <!-- seperate the chats -->
+          <div class="second_sample_row">
+            <a class = "chatName2" style="margin-right: 20%;color : black; font-size: 20px;">Mike Trevors</a>
+            <a class = "people">Active</a>
+            <img class = "online_logo" src = "../static/Images/online_circle.png">
+          </div>
+          <div class = "black_line" style="height:2px;"></div>
+
 
       	</div>
 
 		<form class = "bottom_search_bar">
-  			<input type="text" name="search" placeholder="Search..">
+        <div class = "black_line" style="height:2px;"></div> <!-- emphasize the chats -->
+  			<input type="text" name="search" style="padding-left: 4px; text-color: black" placeholder="Search..">
 		</form>
 
 
-      
+
 
       </div>
-  
+
     </div>
 	</div>
 
@@ -128,7 +155,12 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
 		background-color: #4f92ff;
 		height: 23px;
 	}
-	
+
+  .chat_section {
+    margin-right: 45%;
+    color : '#fffffff';
+    font-size: 27px !important;
+  }
 
 	.first_sample_row .chatTitle  {
 		margin-right: 180px;
@@ -164,21 +196,18 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
 			height :500px;
 			width: 300px;
 			background:white;
-			border:1px solid #4f92ff;
+			border:1px solid #D82D31;
 			border-radius: 30px 0px 0px 0px;
-
-			
 	}
-	
+
 	.buddiesText {
 		color:white;
 	}
 	.buddies_themselves {
 		text-align : left;
-		background: red;
+		background: #D82D31;
 		margin-bottom: 0px;
 		border-radius: 30px 0px 0px 0px;
-
 
 	}
 	.buddies_themselves a {
@@ -192,6 +221,8 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
 	.online_logo {
 		width:20px;
 		height: 20px;
+    padding-right: 5px;
+    padding-bottom: 6px;
 	}
 	input[type=text] {
     width: 130px;
@@ -201,7 +232,7 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
     font-size: 16px;
     background-color: white;
     background-image: url('searchicon.png');
-    background-position: 10px 10px; 
+    background-position: 10px 10px;
     background-repeat: no-repeat;
     padding: 12px 20px 12px 40px;
     -webkit-transition: width 0.4s ease-in-out;
@@ -221,19 +252,6 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
 </style>
 
 <script>
-// Accordion
-function myAccFunc() {
-    var x = document.getElementById("demoAcc");
-    if (x.className.indexOf("w3-show") == -1) {
-        x.className += " w3-show";
-    } else {
-        x.className = x.className.replace(" w3-show", "");
-    }
-}
-
-// Click on the "Jeans" link on page load to open the accordion for demo purposes
-//document.getElementById("myBtn").click();
-
  var something = document.getElementById('buddiesTopPart');
  var chatSomething = document.getElementById('chatTitle');
 
@@ -268,7 +286,7 @@ function myAccFunc() {
  	$('.buddies_chat').css({bottom : '-=500px'});
  	$('#buddiesTopPart').css({bottom : '-=700px'});
 
- 	
+
 
  	clicked--;
  	}
