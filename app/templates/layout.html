@@ -70,6 +70,21 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
         <i class="far fa-circle"></i> <a class="buddiesText">Buddies</a>
       </div>
       <div class="buddies_chat">
+      	<div class="chat_client_only">
+      		<div class="first_sample_row">
+      			<a> Chat title 1 </a>
+      			<br>
+      			<a> 23 people</a>
+      		</div>
+      		<div class = "black_line"></div>
+      		<div class="first_sample_row">
+      			<a> Chat title 2 </a>
+      			<br>
+      			<a> 28 people</a>
+      		</div>
+      		<div class = "black_line"></div>
+      	</div>
+
 
 
       	<div class = "buddies_themselves">
@@ -88,6 +103,17 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
 
 <style>
 
+	.black_line {
+		background-color: black;
+		height: 23px;
+	}
+
+	.first_sample_row a {
+		margin-right: 60px;
+		font-size: 23px;
+		color: white;
+	}
+
 	.buddies_chat {
 			position: fixed;
     		right: 0px;
@@ -95,17 +121,22 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
 			height :500px;
 			width: 500px;
 			background:grey;
+			
+	}
+	.chat_client_only {
+		overflow: scroll;
 	}
 	.buddiesText {
 		color:white;
 	}
 	.buddies_themselves {
 		background: red;
-		margin-top:250px;
+		margin-bottom: 150px;
 
 	}
 	.buddies_themselves a {
 		color: white;
+		border-right: 40px;
 		font-size: 33px;
 	}
 
