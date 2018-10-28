@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+
+<!-- Based on Bootstrap examples on: https://getbootstrap.com/docs/4.0/examples/ -->
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>Sign-Up</title>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <!-- Custom styles for this template -->
+  <link rel="stylesheet" href="../static/CSS/style.css">
+</head>
+<div class="container">
+<div class="row row_container" align="middle">
+<body class="text-center">
+  <form class="form-signin" action="{{ url_for('sign_up') }}" method="post" role="form">
+    <h1 class="h3 mb-3 font-weight-normal" style="color:#3E8EDE;">Sign-Up</h1>
+    <div class="form-group">
+      <label for="name_signup" class="text_style">Name</label>
+      <input name="name_signup" type="form-control" class="form-control"
+      rows="1" maxlength="200" id="name_signup" placeholder="Jane Doe">
+    </div>
+    <div class="form-group">
+      <label for="email_signup" class="text_style">Email address</label>
+      <input name="email_signup" type="email" class="form-control"
+      id="email_signup" placeholder="info@childrenwithcancer.org.uk">
+    </div>
+    <div class="form-group">
+      <label for="password_signup" class="text_style">Password</label>
+      <input name="password_signup" type="password" class="form-control"
+      id="password_signup" placeholder="childrenwithcanceruk88">
+    </div>
+  <div class="form-group">
+    <label for="datebirth_signup" class="text_style">Date of Birth</label>
+    <input name="datebirth_signup" type="form-control" class="form-control"
+    id="datebirth_signup" placeholder="12/02/1988">
+  </div>
+  <div class="form-group">
+    <label for="address_signup" class="text_style">Address</label>
+    <textarea name="address_signup" class="form-control" id="address_signup"
+    rows="2" maxlength="200"
+    placeholder="51 Great Ormond Street, London, WC1N 3JQ"></textarea>
+  </div>
+    <button id="btnSubmit" class="btn btn-lg btn-primary btn-block
+     signin_btn" type="submit">Sign-Up</button>
+
+    {% if result==1 %}
+    <div id="myAlert" class="alert alert-success alert-dismissable" role="alert" style="margin-top:10px">
+      You have signed up!
+    </div>
+    {% elif result==-1 %}
+    <div id="myAlert" class="alert alert-warning alert-dismissable" role="alert" style="margin-top:10px">
+      There was an error. Please try again later.
+    </div>
+    {% endif %}
+  </form>
+</div>
+<div class="row form-signin row_container_signup" text-center>
+  <a href="{{ url_for('login') }}" class="btn btn-lg btn-outline-light btn-block signup_btn" role="button">Log in</a>
+</div>
+</div>
+
+
+  <!-- Optional JavaScript -->
+
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $('#btnSubmit').click(function () {
+        $('#myAlert').show('fade');
+      });
+    });
+  </script>
+
+</body>
+
+</html>
