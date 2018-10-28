@@ -1,0 +1,87 @@
+{% extends "layout.html" %}{% block body %}
+
+<!-- Custom styles for this template -->
+<link rel="stylesheet" href="../static/CSS/dashboard.css">
+
+<div class="row">
+      <div class="col s2"></div>
+      <div class="col s3"><h1 style="background-color:DodgerBlue"></h1></div>
+      <div class="col s2"></div>
+      <div class="col s3"></div>
+      <div class="col s2"></div>
+</div>
+<div class="row">
+      <div class="col s2"></div>
+      <div class="col s3">
+      <h2 style="background-color:DodgerBlue"></h1>
+  	  </div>
+      <div class="col s2"></div>
+      <div class="col s3"></div>
+      <div class="col s2"></div>
+</div>
+<div class="row">
+      <div class="col s1.5"></div>
+      <div class="col s4">
+      <h2 style="background-color:DodgerBlue"></h1>
+  	  </div>
+      <div class="col s1"></div>
+      <div class="col s4"></div>
+      <div class="col s1.5"></div>
+</div>
+<div class="row">
+      <div class="col s1"></div>
+      <div class="col s4 boards top_left" href="{{ url_for('profile') }}">
+		  	<h2>Alex Shand</h2>
+            <div class="row">
+              <div class="col s1"></div>
+              <div class="col s4">
+                <img src="../static/Images/img_avatar1.png" height = 128 style = "border-radius:100px; border:2px solid #000000">
+              </div>
+              <div class="col s5">
+              <p>There are things aecause london is just not as good :(. I'm sorry but its true</p>
+              </div>
+              <div class="col s1"></div>
+              
+            </div>
+		  	<p id="p01">There are things about london here. Blah Blah. Talking aity. Because london is just not as good :(. I'm sorry but its true</p>
+			</div>
+  	  <div class="col s1"></div>
+      <div class="col s4 boards top_right">
+		  	<h2>London</h2>
+		  	<p id="p01">There are things about london here. Blah Blah. Talking about london. info, here is  apic maybe, ok ok ok. Glasgow is obviously better, whatever you say is  pointless. This conversation is going to end in an overwhelming victory for pretty much any scottish city. Because london is just not as good :(. I'm sorry but its true</p>
+			</div>
+  	  <div class="col s1"></div>
+</div>
+<div class="row">
+      <div class="col s1"></div>
+      <div class="col s4 boards bottom_left">
+		  	<h2>London</h2>
+		  	<p id="p01">There are things about london here. Blah Blah. Talking about london. info, here is  apic maybe, ok ok ok. Glasgow is obviously better, whatever you say is  pointless. This conversation is going to end in an overwhelming victory for pretty much any scottish city. Because london is just not as good :(. I'm sorry but its true</p>
+			</div>
+      <div class="col s1"></div>
+      <div class="col s4 boards bottom_right">
+		  	<h2>All Chat</h2>
+		  	<p id="p01">A simple way to find all the chats</p>
+  	  </div>
+      <div class="col s1"></div>
+</div>
+<div class="row">
+      <div class="col s2"></div>
+      <div class="col s3">
+      <h1 style="background-color:DodgerBlue"></h1>
+  	  </div>
+      <div class="col s1"></div>
+      <div class="col s3"></div>
+      <div class="col s3"></div>
+</div>
+<div class="row">
+      <div class="col s2"></div>
+      <div class="col s3">
+      <h1 style="background-color:DodgerBlue"></h1>
+  	  </div>
+      <div class="col s2"></div>
+      <div class="col s3"></div>
+      <div class="col s2"></div>
+</div>
+
+{% endblock %}
