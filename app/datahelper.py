@@ -39,3 +39,6 @@ def get_free_chatrooms(chatrooms):
 
 def get_chatroom_by_id(id):
     return Chatroom.getChatroomById(id)
+
+def add_user(name, email, password, date, address):
+    

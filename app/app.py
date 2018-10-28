@@ -5,6 +5,7 @@ from flask_sqlalchemy import SQLAlchemy
 import uuid
 from datahelper import *
 import os
+import datetime
 
 app = Flask(__name__)
 app.secret_key = os.environ.get('SECRET_KEY', 'secret')
@@ -18,12 +19,10 @@ database = SQLAlchemy(app)
 active_users = {}
 
 def check_content_type(content_type):
-    if request.headers['Content-Type'] != content_type:
-        abort(404)
+    return request.headers['Content-Type'] != content_type
 
 def have_keys(info, keys):
-    if (info.keys & keys) != keys:
-        abort(404)
+    return (set(info.keys()) & keys) != keys
         
 def leave_chat(user):
     chatroom = get_chatroom_by_id(user.chat_id)
@@ -44,8 +43,10 @@ def login():
     if request.method == 'GET':
         return render_template('login.html')
     else:
-        check_content_type('application/x-www-form-urlencoded')
-        have_keys(request.form, {'inputEmail', 'inputPassword'})
+        if check_content_type('application/x-www-form-urlencoded'):
+            abort(404)
+        if have_keys(request.form, {'inputEmail', 'inputPassword'}):
+            abort(404)
         username = request.form['inputEmail']
         password = request.form['inputPassword']
         user = auth(username, password)
@@ -53,22 +54,37 @@ def login():
             user.session_token = uuid.uuid4()
             login_user(user)
             active_users[user.session_token] = user
-            return redirect(url_for("db"))
+            return redirect(url_for("dashboard"))
         else:
             return redirect(url_for("login"))
 
 @app.route('/sign_up', methods = ['GET', 'POST'])
 def sign_up():
     if request.method == 'GET':
-        return render_template('
-        
-@app.route('/db')
+        return render_template('sign_up.html')
+    else:
+        if (check_content_type('application/x-www-form-urlencoded') or
+            have_keys(request.form, {'name_signup',
+                                     'email_signup',
+                                     'password_signup',
+                                     'datebirth_signup',
+                                    'address_signup'})):
+            return render_template('signup.html', error=True)
+        name = request.form['name_signup']
+        email = request.form['email_signup']
+        password = request.form['password_signup']
+        date = request.form['datebirth_signup']
+        address = request.form['address_signup']
+        add_user(name, email, password, date, address)
+        return redirect(url_for('login'))
+
+@app.route('/dashboard')
 @login_required
-def db():
+def dashboard():
     return "good boi, logged in"
 
-@app.route('/kb')
-def kb():
+@app.route('/knowledgebase')
+def knowledgebase():
     return "wiki"
 
 @app.route('/profile')
