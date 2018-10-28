@@ -27,16 +27,18 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
     </a>
   </div>
   <div class="w3-large w3-text-grey side-bar" style="font-weight:bold">
-    <a href="#" class="w3-bar-item w3-button">Dashboard</a>
-    <a href="#" class="w3-bar-item w3-button">Profile</a>
+    <a href="{{ url_for('dashboard') }}" class="w3-bar-item w3-button">Dashboard</a>
+    <a href="{{ url_for('profile') }}" class="w3-bar-item w3-button">Profile</a>
     <a onclick="myAccFunc()" href="javascript:void(0)" class="w3-bar-item w3-button">Learning Zone <i class="fa fa-caret-down"></i>
     </a>
     <div id="demoAcc" class="w3-bar-block w3-hide w3-medium">
       <a href="#" class="w3-bar-item w3-button w3-light-grey"><i class="fa fa-caret-right w3-margin-right"></i>Skinny</a>
       <a href="#" class="w3-bar-item w3-button"><i class="fa fa-caret-right w3-margin-right"></i>Relaxed</a>
     </div>
-    <a href="#" class="w3-bar-item w3-button">Advice Place</a>
-    <a href="#" class="w3-bar-item w3-button">All Chat</a>
+    <a href="{{ url_for('knowledgebase') }}" class="w3-bar-item w3-button">Advice Place</a>
+    <a href="{{ url_for('all_chat') }}" class="w3-bar-item w3-button">All Chat</a>
+    <a href="{{ url_for('login') }}" class="w3-bar-item w3-button">Login</a>
+    <a href="{{ url_for('sign_up') }}" class="w3-bar-item w3-button">Sign-up</a>
   </div>
 </nav>
 
@@ -47,7 +49,6 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
       <img src="../static/Images/cwc-logo.svg" width="96" height="96"/>
     </a>
   </div>
-  <a href="javascript:void(0)" class="w3-bar-item w3-button w3-padding-24 w3-right" onclick="w3_open()"><i class="fa fa-bars"></i></a>
 </header>
 
 <!-- Overlay effect when opening sidebar on small screens -->
@@ -108,10 +109,10 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
 		</form>
 
 
-      
+
 
       </div>
-  
+
     </div>
 	</div>
 
@@ -128,7 +129,7 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
 		background-color: #4f92ff;
 		height: 23px;
 	}
-	
+
 
 	.first_sample_row .chatTitle  {
 		margin-right: 180px;
@@ -167,9 +168,9 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
 			border:1px solid #4f92ff;
 			border-radius: 30px 0px 0px 0px;
 
-			
+
 	}
-	
+
 	.buddiesText {
 		color:white;
 	}
@@ -201,7 +202,7 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
     font-size: 16px;
     background-color: white;
     background-image: url('searchicon.png');
-    background-position: 10px 10px; 
+    background-position: 10px 10px;
     background-repeat: no-repeat;
     padding: 12px 20px 12px 40px;
     -webkit-transition: width 0.4s ease-in-out;
@@ -268,7 +269,7 @@ function myAccFunc() {
  	$('.buddies_chat').css({bottom : '-=500px'});
  	$('#buddiesTopPart').css({bottom : '-=700px'});
 
- 	
+
 
  	clicked--;
  	}

@@ -26,7 +26,7 @@ def check_content_type(content_type):
 
 def have_keys(info, keys):
     return (set(info.keys()) & keys) != keys
-        
+
 def leave_chat(user):
     chatroom = get_chatroom_by_id(user.chat_id)
     user.chat_id = None
@@ -39,7 +39,7 @@ def send_message(user, msg):
 
 def flag_to_moderator(user, msg):
     pass
-    
+
 @login_manager.user_loader
 def load_user(id):
     return active_users.get(id)
@@ -108,8 +108,10 @@ def logout():
 @app.route('/allchat')
 @login_required
 def all_chat():
-    chatrooms = {(name, room.id):[user.colour for user in room.users] for name, room in get_free_chatrooms(get_chatrooms()).items()}
-    return "chatrooms"
+    chatrooms = get_free_chatrooms(get_chatrooms()).values()
+    for chatroom in chatrooms:
+        print(chatroom.id)
+    return render_template('all_chat.html', chatrooms=chatrooms)
 
 @app.route('/chat/<int:id>', methods = ['GET', 'POST'])
 @login_required
@@ -118,19 +120,21 @@ def chat(id):
         chatroom = get_chatroom_by_id(id)
         if not chatroom:
             abort(404)
-        chatroom.users.append(current_user)
+        chatroom.messages = getattr(chatroom, "messages", [])
+        chatroom.users = getattr(chatroom, "users", []).append(current_user)
         current_user.chat_id = id
-        return f'In chat {id}'
+        return render_template('messages.html', chatroom=chatroom)
     else:
-       chatroom = get_chatroom_by_id(id)
-       message = request.data
-       for word in flagged_word:
-           if word in message:
-               flag_to_moderator(current_user, message)
-               break;
-       chatroom.messages.append(message)
-       send_message(current_user, message)
-       return f'Posted Message in chat {id}'
+       # Should work, 404s before reaching
+       #chatroom = get_chatroom_by_id(id)
+       #message = request.data
+       #for word in flagged_word:
+        #   if word in message:
+        #       flag_to_moderator(current_user, message)
+        #       break;
+       #chatroom.messages.append((current_user, message))
+       #send_message(current_user, message)
+       return ''
 
 @app.route('/buddy')
 @login_required
