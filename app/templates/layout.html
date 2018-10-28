@@ -66,32 +66,40 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
 <footer class="custom-footer">
   <div class="row" id="footer_row">
     <div class="col s12 m5 offset-m7 l4 offset-l8" id="footer_row">
-      <div class="btn chat-bar">
+      <div id = "buddiesTopPart" class="btn chat-bar">
         <i class="far fa-circle"></i> <a class="buddiesText">Buddies</a>
       </div>
       <div class="buddies_chat">
       	<div class="chat_client_only">
+      		<div class = "buddies_themselves">
+
+      		 <a>Chat</a>
+
+      		</div>
+
       		<div class="first_sample_row">
-      			<a> Chat title 1 </a>
-      			<br>
-      			<a> 23 people</a>
+      			<a class = "chatTitle"> Leukemia</a>
+      			<a class = "people"> 3 active</a>
+      			<img src = "/images/online_circle.png">
+      		</div>
+      		<div class = "black_line"></div> <!-- seperate the chats -->
+      		<div class="first_sample_row">
+      			<a class = "chatTitle"> Chat title 2 </a>
+      			<a class = "people"> 28 people</a>
       		</div>
       		<div class = "black_line"></div>
-      		<div class="first_sample_row">
-      			<a> Chat title 2 </a>
-      			<br>
-      			<a> 28 people</a>
-      		</div>
-      		<div class = "black_line"></div>
+
+
       	</div>
 
+	
+
+		<form class = "bottom_search_bar">
+  			<input type="text" name="search" placeholder="Search..">
+		</form>
 
 
-      	<div class = "buddies_themselves">
-
-      	 <a>Buddies</a>
-
-      	</div>
+      
 
       </div>
   
@@ -107,11 +115,13 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
 		background-color: black;
 		height: 23px;
 	}
+	
 
-	.first_sample_row a {
-		margin-right: 60px;
+	.first_sample_row .chatTitle  {
+		margin-right: 180px;
 		font-size: 23px;
-		color: white;
+		margin-top: 30px;
+		color: black;
 	}
 
 	.buddies_chat {
@@ -119,25 +129,51 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
     		right: 0px;
     		bottom : -500px;
 			height :500px;
-			width: 500px;
-			background:grey;
+			width: 300px;
+			background:white;
 			
 	}
-	.chat_client_only {
-		overflow: scroll;
-	}
+	
 	.buddiesText {
 		color:white;
 	}
 	.buddies_themselves {
+		text-align : left;
 		background: red;
-		margin-bottom: 150px;
+		margin-bottom: 0px;
+		border-radius: 30px 0px 0px 0px;
+
 
 	}
 	.buddies_themselves a {
+		margin-left: 20px;
 		color: white;
-		border-right: 40px;
+		border-right: 100px;
 		font-size: 33px;
+
+	}
+
+	input[type=text] {
+    width: 130px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url('searchicon.png');
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+	}
+
+	input[type=text]:focus {
+    	width: 100%;
+	}
+
+	.bottom_search_bar {
+		margin-bottom: 0px;
 	}
 
 </style>
@@ -156,21 +192,20 @@ function myAccFunc() {
 // Click on the "Jeans" link on page load to open the accordion for demo purposes
 //document.getElementById("myBtn").click();
 
- var something = document.getElementById('footer_row');
+ var something = document.getElementById('buddiesTopPart');
 
  var clicked = 0;
  something.onclick = function() {
  	if (clicked == 1) {
- 		$('#footer_row').css({marginBottom: '-=500px'});
+ 	$('#btn.chat-bar').css({marginBottom:'-=500px'});
  	$('.buddies_chat').css({marginBottom : '-=500px'});
- 	$('.buddiesText').text("Buddies");
  	clicked--;
  	}
  	else {
  	console.log("clicked");
- 	$('#footer_row').css({marginBottom: '+=500px'});
+ 	$('#btn.chat-bar').css({marginBottom: '+=500px'});
  	$('.buddies_chat').css({marginBottom : '+=500px'});
- 	$('.buddiesText').text("Chats");
+
  	clicked++;
 
  }
