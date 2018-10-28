@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 from flask import Flask, json, request, url_for, redirect, abort, render_template
 from flask_login import UserMixin, LoginManager, login_user, login_required, current_user, logout_user
 from flask_socketio import SocketIO
@@ -58,7 +60,6 @@ def login():
 @app.route('/db')
 @login_required
 def db():
-    print("Here")
     return "good boi, logged in"
 
 @app.route('/kb')

@@ -7,31 +7,33 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <!-- Custom styles for this template -->
-  <link rel="stylesheet" href="../static/CSS/layout.css">
+  <link rel="stylesheet" href="../static/CSS/style.css">
 </head>
 <div class="container">
+<img class="mb-4 login_image" src="../static/Images/cwc-logo.svg" alt="" width="330" height="150" align="middle">
 <div class="row">
 <body class="text-center">
   <form class="form-signin" action="{{ url_for('login') }}" method=post>
-    <img class="mb-4" src="../static/Images/cwc-logo.svg" alt="" width="213" height="72">
-    <h1 class="h3 mb-3 font-weight-normal " style="color: #ffffff;">Please sign in</h1>
+    <!-- <h1 class="h3 mb-3 font-weight-normal " style="color: #000000;">Please sign in</h1> -->
     <label for="inputEmail" class="sr-only">Email address</label>
     <input type="email" id="inputEmail" name="inputEmail" class="form-control" placeholder="Email address" required autofocus>
     <label for="inputPassword" class="sr-only">Password</label>
     <input type="password" id="inputPassword" name="inputPassword" class="form-control" placeholder="Password" required>
-    <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+    <button class="btn btn-lg btn-primary btn-block signin_btn" type="submit">Sign in</button>
   </form>
 </div>
-<div class="row form-signin" text-center>
+<div class="row form-signin signup_btn_row">
   {% if error %}
   <div class="alert alert-warning" role="alert" style="width:100%">
     <strong>Error:</strong> {{ error }}
   </div>
   {% endif %}
 
-  <a href="{{ url_for('kb') }}"
-  class="btn btn-lg btn-outline-light btn-block" role="button">Not now</a>
+  <a href="{{ url_for('sign_up') }}"
+  class="btn btn-lg btn-outline-light btn-block signup_btn" align='middle' role="button">Sign-Up</a>
 
 </div>
 </div>
