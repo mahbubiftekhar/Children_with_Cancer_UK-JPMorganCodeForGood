@@ -12,7 +12,7 @@ In this program, you collaborate with other coders to develop innovative technol
 
 ## The Charity
 [Children with Cancer UK](https://www.childrenwithcancer.org.uk/)
-<img alt="JP Morgan CODE FOR GOOD 2018" src="/IMAGES/childrenWithCancer.jpg">
+<img alt="JP Morgan CODE FOR GOOD 2018" src="/IMAGES/childrenWIthCancer.jpg">
 
 The mission for Children with Cancer UK is to improve survival rates and the quality of survival in young cancer patients and to find ways to prevent cancer in the future.
 
