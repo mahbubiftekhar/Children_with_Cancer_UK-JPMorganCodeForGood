@@ -19,16 +19,28 @@
 }
 .science {
   background-color: #a7ffeb;
+  text-align: center;
 }
 .parent-support {
   background-color: #ff80ab;
+  text-align: center;
 }
 .machines {
   background-color: #b388ff;
+  text-align: center;
 }
 .knowledge-body {
+  margin-right: 10px;
+  margin-left: 10px;
   margin-top: 50px;
 }
+
+.knowledge-text {
+  text-align: center;
+  font-family: "Courier New";
+  font-size: 20px;
+}
+
 .page-title-knowledge {
   border-radius: 20px;
   background-color: #FFA400;
