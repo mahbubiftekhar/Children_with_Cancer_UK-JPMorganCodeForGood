@@ -87,7 +87,7 @@ def sign_up():
 @app.route('/dashboard')
 @login_required
 def dashboard():
-    return "good boi, logged in"
+    return render_template('dashboard.html')
 
 @app.route('/knowledgebase')
 def knowledgebase():
