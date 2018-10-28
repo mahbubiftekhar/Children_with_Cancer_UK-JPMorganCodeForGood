@@ -1,10 +1,11 @@
-<h1  align="center" style="text-align: center;"><span  align="center" style="color: #ff0000;"><strong><span align="center" style="color: #FF0000;"> JP MORGAN CODE FOR GOOD 2018
+
 </span> </strong></span></h1>
 <p style="text-align: center;">&nbsp;</p>
 <p align="center">
  
 <img alt="JP Morgan CODE FOR GOOD 2018" src="/IMAGES/jp.jpg">
 </p>
+<h1  align="center" style="text-align: center;"><span  align="center" style="color: #ff0000;"><strong><span align="center" style="color: #FF0000;">CODE FOR GOOD 2018
 
 ## JP CODE FOR GOOD - 2018 
 In this program, you collaborate with other coders to develop innovative technology solutions for non-profit organizations. You’ll also learn about starting a Technology career with us while being guided by the sharpest minds in our industry.
@@ -29,7 +30,7 @@ The mission for Children with Cancer UK is to improve survival rates and the qua
 
 
 ## Technologies Used 
-[Android Studio](https://developer.android.com/studio/) 
+[Python 3.7](https://www.python.org/downloads/release/python-370/)
 
 
 ## Software Developers
