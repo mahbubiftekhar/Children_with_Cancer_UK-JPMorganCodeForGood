@@ -1,5 +1,6 @@
-from flask import Flask, json, request, url_for, redirect, abort, render_template
+from flask import Flask, json, request, url_for, redirect, abort
 from flask_login import UserMixin, LoginManager, login_user, login_required, current_user, logout_user
+from flask_socketio import SocketIO
 import uuid
 import datahelper
 import os
@@ -9,12 +10,13 @@ app.secret_key = os.environ.get('SECRET_KEY', 'secret')
 login_manager = LoginManager()
 login_manager.init_app(app)
 login_manager.login_view = 'login'
-
+socket = SocketIO(app)
 
 active_users = {}
 
 class User(UserMixin):
     def __init__(self):
+        self.name = "Steve"
         self.id = str(uuid.uuid4())
         self.chat_id = None
 
@@ -23,9 +25,18 @@ def leave_chat(user):
     user.chat_id = None
     chatroom.users.remove(user)
 
+def send_message(user, msg):
+    data = {'name' : user.name,
+            'msg'  : msg }
+    socket.emit(f'chatroom_{user.chat_id}', data, broadcast=True)
+
 @login_manager.user_loader
 def load_user(id):
     return active_users.get(id)
+        
+@app.route('/')
+def homepage():
+    return "homepage things"
 
 @app.route('/', methods = ['GET', 'POST'])
 def login():
@@ -76,13 +87,14 @@ def chat(id):
     chatroom.users.append(current_user)
     current_user.chat_id = id
     return f'In chat {id}'
-#
-# @app.route('/chat/<int:chatyppl>/post', methods = ['POST'])
-# @login_required
-# def post_chat(id):
-#     chatroom = get_chatroom_by_id(id)
-#     message = request.data
-#     chatroom.messages.append(message)
+
+@app.route('/chat/<int:chatyppl>/post', methods = ['POST'])
+@login_required
+def post_chat(id):
+    chatroom = get_chatroom_by_id(id)
+    message = request.data
+    chatroom.messages.append(message)
+    send_message(current_user, message)
 
 @app.route('/buddy')
 @login_required
