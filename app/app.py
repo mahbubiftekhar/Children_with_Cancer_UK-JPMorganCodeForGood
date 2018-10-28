@@ -91,7 +91,7 @@ def dashboard():
 
 @app.route('/knowledgebase')
 def knowledgebase():
-    return "wiki"
+    return render_template('knowledge.html')
 
 @app.route('/profile')
 @login_required

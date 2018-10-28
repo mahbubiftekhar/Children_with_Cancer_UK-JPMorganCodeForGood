@@ -17,7 +17,29 @@
   margin-bottom: 0px;
   padding-right: 0px;
 }
-
+.science {
+  background-color: #a7ffeb;
+}
+.parent-support {
+  background-color: #ff80ab;
+}
+.machines {
+  background-color: #b388ff;
+}
+.knowledge-body {
+  margin-top: 50px;
+}
+.page-title-knowledge {
+  border-radius: 20px;
+  background-color: #FFA400;
+  font-family: "Courier New";
+  font-size: 60px;
+  color: black;
+  text-align: center;
+  margin-top: 50px;
+  margin-left: 50px;
+  max-width: 500px;
+}
 .chat-bar {
   background-color: #D82D31;
   border-radius: 20px 0px 0px;
