@@ -30,7 +30,9 @@ def load_user(id):
 @app.route('/', methods = ['GET', 'POST'])
 def login():
     if request.method == 'GET':
-        return render_template('login.html')
+        chatrooms = [{'name':'General Discussion', 'users': ['1']}, {'name':'Battling Leukemia', 'users': ['1','2','3']}, {'name':'Support', 'users': ['1','2','3']},{'name':'memers', 'users': ['1','2']},{'name':'memers', 'users': ['1','2','3']},{'name':'memers', 'users': ['1']}]
+        return render_template('all_chat.html', chatrooms=chatrooms)
+        #return render_template('login.html')
     else:
         username = "safe"
         password = "env"

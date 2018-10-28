@@ -18,7 +18,7 @@
   padding-right: 0px;
 }
 
-.chat-bar { 
+.chat-bar {
   background-color: #D82D31;
   border-radius: 20px 0px 0px;
   font-size: 30px;
@@ -28,4 +28,76 @@
   background-color: #D82D31;
 }
 
+.chat-room {
+  max-height: 580px;
+  margin-left:50px;
+  margin-right:50px;
+  margin-top: 30px;
+  text-align: center;
+  overflow: auto;
+}
 
+.chat-room-element {
+  background-color: #e3f2fd;
+  border-radius: 20px;
+  font-family: "Roboto", sans-serif;
+  border: 2px solid #64b5f6;
+  font-size: 26px;
+  margin-bottom: 10px;
+
+}
+
+.chat-room-element-btn {
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+}
+
+.chat-room-title {
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  color: #64b5f6;
+  font-weight: bold;
+  font-size: 40px;
+}
+
+.page-title {
+  border-radius: 20px;
+  background-color: #64b5f6;
+  font-family: "Courier New";
+  font-size: 80px;
+  color: black;
+  text-align: center;
+  margin-top: 50px;
+  margin-left: 50px;
+  max-width: 500px;
+}
+
+.chat-room-header {
+  font-family: "Roboto", sans-serif;
+  font-size: 40px;
+  color: #418DDD;
+}
+
+.circle {
+  width: 25%;
+  height: 0;
+  padding-bottom: 25%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  background: #4679BD;
+}
+
+.join-button {
+  height: auto;
+  width: 180px;
+  font-size: 22px;
+  background-color: black;
+  color: red;
+}
+
+@font-face {
+  font-family: DISKOPIA2;
+  src: url('../Fonts/DISKOPIA2.0.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}

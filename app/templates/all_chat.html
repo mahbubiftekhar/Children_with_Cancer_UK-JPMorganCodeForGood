@@ -1,1 +1,32 @@
-{% extends "layout.html" %}{% block body %}{% endblock %} 
+{% extends "layout.html" %}
+{% block body %}
+
+<div class="page-title">
+  All Chat
+</div>
+<div class="chat-room">
+  {% for chatroom in chatrooms %}
+  <div class="chat-room-element">
+    <div class="row">
+      <div class="col s8 chat-room-title">
+        {{ chatroom.name }}
+      </div>
+    </div>
+    <div class=row>
+      <div class="col s8">
+        {% for user in chatroom.users %}
+        <img height="80px" width="80px" src="../static/Images/profile.png">
+        {% endfor %}
+      </div>
+
+      <div class="col s4 chat-room-element-btn">
+        <a class="btn-large join-button">Join
+          <i class="fas fa-sign-in-alt"></i></a>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+
+{% endblock %}
