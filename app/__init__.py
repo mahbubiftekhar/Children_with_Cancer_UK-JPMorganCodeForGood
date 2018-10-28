@@ -1,4 +1,6 @@
-from flask import Flask, json, request, url_for, redirect, abort
+#!/usr/bin/env python3
+
+from flask import Flask, json, request, url_for, redirect, abort, render_template
 from flask_login import UserMixin, LoginManager, login_user, login_required, current_user, logout_user
 from flask_socketio import SocketIO
 import uuid
@@ -33,7 +35,7 @@ def send_message(user, msg):
 @login_manager.user_loader
 def load_user(id):
     return active_users.get(id)
-        
+
 @app.route('/')
 def homepage():
     return "homepage things"
@@ -45,13 +47,18 @@ def login():
         return render_template('all_chat.html', chatrooms=chatrooms)
         #return render_template('login.html')
     else:
-        username = "safe"
-        password = "env"
-        if datahelper.auth(username, password):
-            login_user(User())
-            return redirect(url_for("db"))
-        else:
-            return redirect(url_for("login"))
+        return render_template('all_chat.html')
+        # username = "safe"
+        # password = "env"
+        # if datahelper.auth(username, password):
+        #     login_user(User())
+        #     return redirect(url_for("db"))
+        # else:
+        #     return redirect(url_for("login"))
+
+@app.route('/sign_up')
+def sign_up():
+    return render_template('sign_up.html')
 
 @app.route('/db')
 @login_required
