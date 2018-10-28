@@ -17,7 +17,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////tmp/app.db'
 database = SQLAlchemy(app)
 
 active_users = {}
-flaged_words = []
+flagged_words = []
 
 def check_content_type(content_type):
     return request.headers['Content-Type'] != content_type
@@ -122,6 +122,10 @@ def chat(id):
     else:
        chatroom = get_chatroom_by_id(id)
        message = request.data
+       for word in flagged_word:
+           if word in message:
+               flag_to_moderator(current_user, message)
+               break;
        chatroom.messages.append(message)
        send_message(current_user, message)
        return f'Posted Message in chat {id}'
