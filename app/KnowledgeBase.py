@@ -1,11 +1,5 @@
 from datetime import datetime
-from flask import Flask
-from flask_sqlalchemy import SQLAlchemy
-
-
-app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////tmp/knowledgebase.db'
-db = SQLAlchemy(app)
+from app import database as db
 
 class KnowledgeBase(db.Model):
 	id = db.Column(db.Integer, primary_key=True, autoincrement=True)
@@ -27,10 +21,6 @@ class KnowledgeBase(db.Model):
 
 	
 db.create_all()
-#Functions tests
-print(KnowledgeBase.addKnowledgeBase("The psychology of sid","A distrubed human being in need of medical attension ASAP"))
-print(KnowledgeBase.getKnowledgeBaseInfo(1))
-print(KnowledgeBase.deleteKnowledge(1))
 
 
 

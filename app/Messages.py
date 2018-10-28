@@ -1,11 +1,5 @@
 from datetime import datetime
-from flask import Flask
-from flask_sqlalchemy import SQLAlchemy
-
-
-app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////tmp/messages.db'
-db = SQLAlchemy(app)
+from app import database as db
 
 class Messages(db.Model):
 	id = db.Column(db.Integer, primary_key=True, autoincrement=True)
@@ -25,7 +19,3 @@ class Messages(db.Model):
 		return Messages.query.filter_by(receivedUserID=uid).all()
 
 db.create_all() #Call this before doing any database stuff
-
-print(Messages.addMessage("Hi, I heard you like candy. I bought some.", 1, 3, datetime.utcnow()))
-print(Messages.getAllSentMessages(1))
-print(Messages.getAllReceivedMessages(3))

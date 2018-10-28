@@ -1,9 +1,13 @@
+#!/usr/bin/env python3
+
 from flask import Flask, json, request, url_for, redirect, abort, render_template
 from flask_login import UserMixin, LoginManager, login_user, login_required, current_user, logout_user
 from flask_socketio import SocketIO
+from flask_sqlalchemy import SQLAlchemy
 import uuid
 from datahelper import *
 import os
+import datetime
 
 app = Flask(__name__)
 app.secret_key = os.environ.get('SECRET_KEY', 'secret')
@@ -11,25 +15,31 @@ login_manager = LoginManager()
 login_manager.init_app(app)
 login_manager.login_view = 'login'
 socket = SocketIO(app)
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////tmp/app.db'
+database = SQLAlchemy(app)
 
 active_users = {}
+flaged_words = []
 
-class User(UserMixin):
-    def __init__(self):
-        self.name = "Steve"
-        self.id = str(uuid.uuid4())
-        self.chat_id = None
+def check_content_type(content_type):
+    return request.headers['Content-Type'] != content_type
 
+def have_keys(info, keys):
+    return (set(info.keys()) & keys) != keys
+        
 def leave_chat(user):
     chatroom = get_chatroom_by_id(user.chat_id)
     user.chat_id = None
     chatroom.users.remove(user)
 
 def send_message(user, msg):
-    data = {'name' : user.name,
+    data = {'name' : user.username,
             'msg'  : msg }
     socket.emit(f'chatroom_{user.chat_id}', data, broadcast=True)
 
+def flag_to_moderator(user, msg):
+    pass
+    
 @login_manager.user_loader
 def load_user(id):
     return active_users.get(id)
@@ -39,30 +49,48 @@ def login():
     if request.method == 'GET':
         return render_template('login.html')
     else:
-        if request.headers['Content-Type'] != 'application/x-www-form-urlencoded':
-            abort('Incorrect data format')
-        if 'inputEmail' not in request.form or 'inputPassword' not in request.form:
-            abort('Missing username or password')
+        if check_content_type('application/x-www-form-urlencoded'):
+            abort(404)
+        if have_keys(request.form, {'inputEmail', 'inputPassword'}):
+            abort(404)
         username = request.form['inputEmail']
         password = request.form['inputPassword']
-        print(username)
-        print(password)
-        if auth(username, password):
-            user = User()
+        user = auth(username, password)
+        if user:
+            user.session_token = uuid.uuid4()
             login_user(user)
-            active_users[user.id] = user
-            return redirect(url_for("db"))
+            active_users[user.session_token] = user
+            return redirect(url_for("dashboard"))
         else:
             return redirect(url_for("login"))
 
-@app.route('/db')
+@app.route('/sign_up', methods = ['GET', 'POST'])
+def sign_up():
+    if request.method == 'GET':
+        return render_template('sign_up.html')
+    else:
+        if (check_content_type('application/x-www-form-urlencoded') or
+            have_keys(request.form, {'name_signup',
+                                     'email_signup',
+                                     'password_signup',
+                                     'datebirth_signup',
+                                    'address_signup'})):
+            return render_template('signup.html', error=True)
+        name = request.form['name_signup']
+        email = request.form['email_signup']
+        password = request.form['password_signup']
+        date = request.form['datebirth_signup']
+        address = request.form['address_signup']
+        add_user(name, email, password, date, address)
+        return redirect(url_for('login'))
+
+@app.route('/dashboard')
 @login_required
-def db():
-    print("Here")
+def dashboard():
     return "good boi, logged in"
 
-@app.route('/kb')
-def kb():
+@app.route('/knowledgebase')
+def knowledgebase():
     return "wiki"
 
 @app.route('/profile')
@@ -80,7 +108,7 @@ def logout():
 @app.route('/allchat')
 @login_required
 def all_chat():
-    chatrooms = get_free_chatrooms(get_chatrooms())
+    chatrooms = {(name, room.id):[user.colour for user in room.users] for name, room in get_free_chatrooms(get_chatrooms()).items()}
     return "chatrooms"
 
 @app.route('/chat/<int:id>', methods = ['GET', 'POST'])
@@ -88,6 +116,8 @@ def all_chat():
 def chat(id):
     if request.method == 'GET':
         chatroom = get_chatroom_by_id(id)
+        if not chatroom:
+            abort(404)
         chatroom.users.append(current_user)
         current_user.chat_id = id
         return f'In chat {id}'
