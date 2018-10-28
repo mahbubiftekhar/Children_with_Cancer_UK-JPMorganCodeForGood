@@ -1,0 +1,30 @@
+/* Based on Bootstrap examples on: https://getbootstrap.com/docs/4.0/examples/ -->*/
+html,
+body {
+  height: 100%;
+}
+
+.boards {
+    border-radius: 10px;
+    padding:20px;
+}
+
+.top_left {
+  background-color:blue;
+  color:white;
+}
+
+.top_right {
+  background-color:black;
+  color:white;
+}
+
+.bottom_left {
+  background-color:yellow;
+  color:white;
+}
+
+.bottom_right {
+  background-color:red;
+  color:white;
+}

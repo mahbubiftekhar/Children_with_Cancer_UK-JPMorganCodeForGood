@@ -8,8 +8,11 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="styles.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 <link rel="stylesheet" href="../static/CSS/layout.css">
+<script src="https://d3js.org/d3.v5.min.js"></script>
 <style>
 .w3-sidebar a {font-family: "Roboto", sans-serif}
 body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
@@ -57,22 +60,165 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
   {% block body %}
   {% endblock %}
 </div>
-  
+
 
 <!-- Footer -->
+
+<!-- Add Animations to this if I had time -->
 
 <footer class="custom-footer">
   <div class="row" id="footer_row">
     <div class="col s12 m5 offset-m7 l4 offset-l8" id="footer_row">
-      <a class="btn chat-bar">
-        <i class="far fa-circle"></i> Buddies
-      </a>
-    </div>
+      <div id = "buddiesTopPart" class="btn chat-bar">
+        <i class="far fa-circle"></i> <a class="buddiesText">Buddies</a>
+      </div>
+      <div class="buddies_chat">
+      	<div class="chat_client_only">
+      		<div class = "buddies_themselves">
 
-  </div>
+      		 <a id = "chatTitle" style="width:300px;">Chat</a>
+      		 <img style="margin-left = 20px;" class = "online_logo" src = "down_arrow.png">
+
+      		</div>
+
+      		<div class="first_sample_row">
+      			<a class = "chatName" style="margin-right: 20%;color : black;font-size: 20px;">Leukemia</a>
+      			<a class = "people"> 3 active</a>
+      			<img class = "online_logo" src = "online_circle.png">
+      		</div>
+      		<div class = "black_line" style="height:2px;"></div> <!-- seperate the chats -->
+      		<div class="second_sample_row">
+      			<a class = "chatName2" style="margin-right: 20%;color : black; font-size: 20px;">Cancer &nbsp &nbsp	</a>
+      			<a class = "people"> 8 active</a>
+      			<img class = "online_logo" src = "online_circle.png">
+      		</div>
+      		<div class = "black_line" style="height:2px;"></div>
+
+      		<div class="second_sample_row">
+      			<a class = "chatName2" style="margin-right: 0%;color : black; font-size: 20px;">Athlete's Foot &nbsp</a>
+      			<a class = "people"> 0 Active</a>
+      			<img class = "online_logo" src = "offline_circle.png">
+      		</div>
+      		<div class = "black_line" style="height:2px;"></div>
+
+      	</div>
+
+		<form class = "bottom_search_bar">
+  			<input type="text" name="search" placeholder="Search..">
+		</form>
+
+
+      
+
+      </div>
+  
+    </div>
+	</div>
+
+
 </footer>
 
+<style>
 
+#buddiesTopPart {
+	z-index : 2;
+}
+
+	.black_line {
+		background-color: #4f92ff;
+		height: 23px;
+	}
+	
+
+	.first_sample_row .chatTitle  {
+		margin-right: 180px;
+		font-size: 23px;
+		margin-top: 30px;
+		color: black;
+	}
+
+	.first_sample_row .people  {
+		margin-left: 10px;
+		font-size: 23px;
+		top:-100px;
+		color: black;
+	}
+	.second_sample_row .chatTitle  {
+		margin-right: 180px;
+		font-size: 23px;
+		margin-top: 30px;
+		color: black;
+	}
+
+	.second_sample_row .people  {
+		margin-left: 10px;
+		font-size: 23px;
+		top:-100px;
+		color: black;
+	}
+
+	.buddies_chat {
+			position: fixed;
+    		right: 0px;
+    		bottom : -500px;
+			height :500px;
+			width: 300px;
+			background:white;
+			border:1px solid #4f92ff;
+			border-radius: 30px 0px 0px 0px;
+
+			
+	}
+	
+	.buddiesText {
+		color:white;
+	}
+	.buddies_themselves {
+		text-align : left;
+		background: red;
+		margin-bottom: 0px;
+		border-radius: 30px 0px 0px 0px;
+
+
+	}
+	.buddies_themselves a {
+		margin-left: 20px;
+		color: white;
+		border-right: 100px;
+		font-size: 33px;
+
+	}
+
+	.online_logo {
+		width:20px;
+		height: 20px;
+	}
+	input[type=text] {
+    width: 130px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url('searchicon.png');
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+	}
+
+	input[type=text]:focus {
+    	width: 100%;
+	}
+
+	.bottom_search_bar {
+		position: absolute;
+  		bottom: 0;
+  		width: 300px;
+	}
+
+</style>
 
 <script>
 // Accordion
@@ -86,7 +232,57 @@ function myAccFunc() {
 }
 
 // Click on the "Jeans" link on page load to open the accordion for demo purposes
-document.getElementById("myBtn").click();
+//document.getElementById("myBtn").click();
+
+ var something = document.getElementById('buddiesTopPart');
+ var chatSomething = document.getElementById('chatTitle');
+
+ var clicked = 0;
+ something.onclick = function() {
+ 	if (clicked == 1) {
+  	console.log("clicked first")
+ 	$('.btn.chat-bar').css({bottom:'-=500px'});
+ 	$('.buddies_chat').css({bottom : '-=500px'});
+ 	$('#buddiesTopPart').css({bottom : '-=700px'});
+
+
+ 	clicked--;
+ 	}
+ 	else {
+ 	console.log("clicked first")
+ 	$('.btn.chat-bar').css({bottom: '+=500px'});
+ 	$('.buddies_chat').css({bottom : '+=500px'});
+ 	$('#buddiesTopPart').css({bottom : '+=700px'});
+
+
+ 	clicked++;
+
+ }
+ }
+
+ var clicked = 0;
+ chatSomething.onclick = function() {
+ 	if (clicked == 1) {
+ 	console.log("clicked second")
+ 	$('.btn.chat-bar').css({bottom:'-=500px'});
+ 	$('.buddies_chat').css({bottom : '-=500px'});
+ 	$('#buddiesTopPart').css({bottom : '-=700px'});
+
+ 	
+
+ 	clicked--;
+ 	}
+ 	else {
+ 	console.log("clicked second");
+ 	$('.btn.chat-bar').css({bottom: '+=500px'});
+ 	$('.buddies_chat').css({bottom : '+=500px'});
+ 	$('#buddiesTopPart').css({bottom : '+=700px'});
+
+
+ 	clicked++;
+
+ }
+ }
 
 
 // Script to open and close sidebar
@@ -102,6 +298,6 @@ function w3_close() {
 </script>
 
 </body>
-  
+
 
 </html>
