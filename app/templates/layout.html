@@ -8,6 +8,8 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="styles.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 <link rel="stylesheet" href="../static/CSS/layout.css">
 <style>
@@ -64,15 +66,37 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
 <footer class="custom-footer">
   <div class="row" id="footer_row">
     <div class="col s12 m5 offset-m7 l4 offset-l8" id="footer_row">
-      <a class="btn chat-bar">
-        <i class="far fa-circle"></i> Buddies
-      </a>
-    </div>
+      <div class="btn chat-bar">
+        <i class="far fa-circle"></i> <a class="buddiesText">Buddies</a>
+      </div>
+      <div class="buddies_chat">
+      	<div class = "buddies_themselves">
+      		
+      	</div>
 
-  </div>
+      </div>
+  
+    </div>
+	</div>
+
+
 </footer>
 
+<style>
 
+	.buddies_chat {
+			position: fixed;
+    		right: 0px;
+    		bottom : -500px;
+			height :500px;
+			width: 500px;
+			background:black;
+	}
+	.buddiesText {
+		color:white;
+	}
+
+</style>
 
 <script>
 // Accordion
@@ -86,7 +110,27 @@ function myAccFunc() {
 }
 
 // Click on the "Jeans" link on page load to open the accordion for demo purposes
-document.getElementById("myBtn").click();
+//document.getElementById("myBtn").click();
+
+ var something = document.getElementById('footer_row');
+
+ var clicked = 0;
+ something.onclick = function() {
+ 	if (clicked == 1) {
+ 		$('#footer_row').css({marginBottom: '-=500px'});
+ 	$('.buddies_chat').css({marginBottom : '-=500px'});
+ 	$('.buddiesText').text("Buddies");
+ 	clicked--;
+ 	}
+ 	else {
+ 	console.log("clicked");
+ 	$('#footer_row').css({marginBottom: '+=500px'});
+ 	$('.buddies_chat').css({marginBottom : '+=500px'});
+ 	$('.buddiesText').text("Chats");
+ 	clicked++;
+
+ }
+ }
 
 
 // Script to open and close sidebar
