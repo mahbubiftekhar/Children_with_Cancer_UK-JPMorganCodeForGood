@@ -102,8 +102,7 @@ def logout():
 @app.route('/allchat')
 @login_required
 def all_chat():
-    chatrooms = get_free_chatrooms(get_chatrooms())
-    print(chatrooms)
+    chatrooms = {(name, room.id):[user.colour for user in room.users] for name, room in get_free_chatrooms(get_chatrooms()).items()}
     return "chatrooms"
 
 @app.route('/chat/<int:id>', methods = ['GET', 'POST'])

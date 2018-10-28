@@ -8,9 +8,13 @@ from Profile import Profile
 from UserBadges import UserBadges
 
 from collections import defaultdict
-import datetime
+from datetime import datetime
 
 chatrooms = defaultdict(list)
+
+#Chatroom.addNewChatroom('Battling Leukemia', datetime.utcnow(), None, 'Red', 'Battling Leukemia')
+#Chatroom.addNewChatroom('General Advice', datetime.utcnow(), None, 'Red', 'General Advice')
+#Chatroom.addNewChatroom('Hospital Treatment', datetime.utcnow(), None, 'Red', 'Hospital Treatment')
 
 def auth(email, key):
     user = Profile.getUserWithEmail(email)
@@ -23,14 +27,15 @@ def auth(email, key):
 def get_chatrooms():
     return Chatroom.getAllTypes()
 
-def _get_free_chatroom(chatttpe):
+def _get_free_chatroom(chattype):
     candidates = chatrooms[chattype]
     if candidates:
         for candidate in candidates:
             if len(candidate.users) < 15:
                 return candidate
     i = len(candidates)
-    chatroom = Chatroom(f'{chattype}_{i}', datetime.utcnow(), 'dummy_colour', chattype)
+    chatroom = Chatroom(name=f'{chattype}_{i}', creationDate=datetime.utcnow(), colour='Red', chattype=chattype)
+    chatroom.users = []
     chatrooms[chattype].append(chatroom)
     return chatroom
 
@@ -41,4 +46,4 @@ def get_chatroom_by_id(id):
     return Chatroom.getChatroomById(id)
 
 def add_user(name, email, password, date, address):
-    
+    Profile.addProfile(email, 'Child', name, 'Red', datetime.utcnow(), password, 0)
