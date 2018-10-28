@@ -24,6 +24,11 @@
   font-size: 30px;
 }
 
+.top-bar-btn {
+  margin-right: 20px;
+  margin-left: 20px;
+}
+
 .btn:hover {
   background-color: #D82D31;
 }
@@ -87,12 +92,56 @@
   background: #4679BD;
 }
 
+.header-btn-login {
+  margin-top: 30px;
+  margin-right: 50px;
+  width: 100px;
+  background-color: #d52c31;
+}
+
+.header-btn-signup {
+  margin-top: 30px;
+  margin-right: 50px;
+  width: 100px;
+  background-color: #418ddd;
+}
+
 .join-button {
   height: auto;
   width: 180px;
   font-size: 22px;
   background-color: black;
   color: red;
+}
+
+.messages-heading {
+  border-radius: 20px;
+}
+
+div.ex1 {
+    overflow: auto;
+    max-height: 250px;
+}
+
+div.ex2 {
+    background-color: lightblue;
+    width: 110px;
+    height: 110px;
+    overflow: hidden;
+}
+
+div.ex3 {
+    background-color: lightblue;
+    width: 110px;
+    height: 110px;
+    overflow: auto;
+}
+
+div.ex4 {
+    background-color: lightblue;
+    width: 110px;
+    height: 110px;
+    overflow: visible;
 }
 
 @font-face {

@@ -1,0 +1,96 @@
+{% extends "layout.html" %}{% block body %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.dev.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+  var socket = io.connect();
+  socket.on('chat_{{ chatroom.id }}', function(msg) {
+    location.reload();
+  });
+})
+</script>
+
+<div class = "container w3-teal messages-heading">
+<h1>Leukemia</h1>
+<p>This chatroom is geared towards useful discussion about Leukaemia</p>
+<p>Leukaemia, also spelled leukaemia, is a group of cancers that usually begins in the bone marrow and result in high numbers of abnormal white blood cells. These white blood cells are not fully developed and are called blasts or leukaemia cells.</p>
+</div>
+<div class="container">
+  <h2>Messages</h2>
+
+  <!-- Left-aligned media object -->
+ <div class="ex1">
+  <div class="media">
+    <div class="media-left">
+      <img src="../static/Images/img_avatar1.png" class="media-object" style="width:60px">
+    </div>
+    <div class="media-body">
+      <h4 class="media-heading">USER 1</h4>
+      <p>Hi, How did your treatment go last week?</p>
+    </div>
+  </div>
+
+  <!-- Right-aligned media object -->
+  <div class="media">
+    <div class="media-body">
+      <div class="media-right">
+        <img src="../static/Images/img_avatar1.png" class="media-object" style="width:60px">
+      </div>
+      <h4 class="media-heading">USER 2</h4>
+      <p>It went well thanks! hbu?</p>
+    </div>
+  </div>
+
+
+  <div class="media">
+    <div class="media-left">
+      <img src="../static/Images/img_avatar1.png" class="media-object" style="width:60px">
+    </div>
+    <div class="media-body">
+      <h4 class="media-heading">USER 1</h4>
+      <p>Yes, it was not bad thanks!</p>
+    </div>
+  </div>
+
+
+  <div class="media">
+    <div class="media-left">
+      <img src="../static/Images/img_avatar1.png" class="media-object" style="width:60px">
+    </div>
+    <div class="media-body">
+      <h4 class="media-heading">USER 1</h4>
+      <p>How was the facilities at the hospital?</p>
+    </div>
+  </div>
+
+  <!-- Right-aligned media object -->
+  <div class="media">
+    <div class="media-body">
+      <div class="media-right">
+        <img src="../static/Images/img_avatar1.png" class="media-object" style="width:60px">
+      </div>
+      <h4 class="media-heading">USER 2</h4>
+      <p>They were good, but the cafe was limited</p>
+    </div>
+  </div>
+
+  <div class="media">
+    <div class="media-left">
+      <img src="../static/Images/img_avatar1.png" class="media-object" style="width:60px">
+    </div>
+    <div class="media-body">
+      <h4 class="media-heading">USER 1</h4>
+      <p>Where would you recommend we go instead?</p>
+    </div>
+  </div>
+
+</div>
+
+  <div class="contact-form">
+                <div class="form-group">
+                  <label for="InputTextarea">Type your message</label>
+                  <textarea name="message" class="form-control" id="InputTextarea" rows="6" required=""></textarea>
+                </div>
+                <button type="submit" name="submit" class="btn btn-primary">SEND MESSAGE</button>
+              </form>
+  </div>
+{% endblock %}

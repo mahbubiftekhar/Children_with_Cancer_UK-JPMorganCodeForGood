@@ -27,10 +27,9 @@ def _get_free_chatroom(chattype):
     candidates = chatrooms[chattype]
     if candidates:
         for candidate in candidates:
-            if len(candidate.users) < 15:
+            if len(getattr(candidate, 'users', 0)) < 15:
                 return candidate
-    i = len(candidates)
-    chatroom = Chatroom(name=f'{chattype}_{i}', creationDate=datetime.utcnow(), colour='Red', chattype=chattype)
+    chatroom = Chatroom.addNewChatroom(f'{chattype}', datetime.utcnow(), datetime.utcnow(), 'Red', chattype)
     chatroom.users = []
     chatrooms[chattype].append(chatroom)
     return chatroom
@@ -43,3 +42,8 @@ def get_chatroom_by_id(id):
 
 def add_user(name, email, password, date, address):
     Profile.addProfile(email, 'Child', name, 'Red', datetime.utcnow(), password, 0)
+
+
+#Chatroom.addNewChatroom('Leukemia', datetime.now(), datetime.now(), "WOWO", "Leukemia")
+#Chatroom.addNewChatroom('Leukemia', datetime.now(), datetime.now(), "WOWO", "Leukemia1")
+#Chatroom.addNewChatroom('Leukemia', datetime.now(), datetime.now(), "WOWO", "Leukemia2")

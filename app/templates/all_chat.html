@@ -9,7 +9,7 @@
   <div class="chat-room-element">
     <div class="row">
       <div class="col s8 chat-room-title">
-        {{ chatroom.name }}
+        {{ chatroom.chattype }}
       </div>
     </div>
     <div class=row>
@@ -20,7 +20,7 @@
       </div>
 
       <div class="col s4 chat-room-element-btn">
-        <a class="btn-large join-button">Join
+        <a href="/chat/{{ chatroom.id }}" class="btn-large join-button">Join
           <i class="fas fa-sign-in-alt"></i></a>
       </div>
     </div>

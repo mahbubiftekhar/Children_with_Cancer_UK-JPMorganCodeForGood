@@ -27,8 +27,8 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
     </a>
   </div>
   <div class="w3-large w3-text-grey side-bar" style="font-weight:bold">
-    <a href="#" class="w3-bar-item w3-button">Dashboard</a>
-    <a href="#" class="w3-bar-item w3-button">Profile</a>
+    <a href="{{ url_for('dashboard') }}" class="w3-bar-item w3-button">Dashboard</a>
+    <a href="{{ url_for('profile') }}" class="w3-bar-item w3-button">Profile</a>
     <a onclick="myAccFunc()" href="javascript:void(0)" class="w3-bar-item w3-button">Learning Zone <i class="fa fa-caret-down"></i>
     </a>
     <div id="demoAcc" class="w3-bar-block w3-hide w3-medium">
@@ -37,6 +37,8 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
     </div>
     <a href="https://www.cancerresearchuk.org/about-cancer/cancer-chat" class="w3-bar-item w3-button">Advice Place</a>
     <a href="{{ url_for('all_chat') }}" class="w3-bar-item w3-button">All Chat</a>
+    <a href="{{ url_for('login') }}" class="w3-bar-item w3-button">Login</a>
+    <a href="{{ url_for('sign_up') }}" class="w3-bar-item w3-button">Sign-up</a>
   </div>
 </nav>
 
@@ -209,6 +211,7 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
 		margin-bottom: 0px;
 		border-radius: 30px 0px 0px 0px;
 
+
 	}
 	.buddies_themselves a {
 		margin-left: 20px;
@@ -252,6 +255,19 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
 </style>
 
 <script>
+// Accordion
+function myAccFunc() {
+    var x = document.getElementById("demoAcc");
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+    } else {
+        x.className = x.className.replace(" w3-show", "");
+    }
+}
+
+// Click on the "Jeans" link on page load to open the accordion for demo purposes
+//document.getElementById("myBtn").click();
+
  var something = document.getElementById('buddiesTopPart');
  var chatSomething = document.getElementById('chatTitle');
 

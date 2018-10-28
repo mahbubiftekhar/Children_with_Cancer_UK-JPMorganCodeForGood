@@ -16,17 +16,16 @@ class Chatroom(db.Model):
 		chat = Chatroom(name = fname, creationDate = fcreationDate, lastUpdate = flastUpdate, colour = fcolour, chattype = fchattype )
 		db.session.add(chat)
 		db.session.commit()
-		return True
-    
+		return chat
+
 	def getAllTypes():
 		return set(chatroom.chattype for chatroom in Chatroom.query.all())
-    
+
 	def getChatroomById(fcid):
 		return db.session.query(Chatroom).get(fcid)
-	
+
 	def deleteById(fcid):
 		Chatroom.query.filter_by(id=fcid).delete()
 		print("Deleted Chatroom with id " + str(fcid))
 
 db.create_all()
-
