@@ -43,6 +43,10 @@ def login():
         # else:
         #     return redirect(url_for("login"))
 
+@app.route('/sign_up')
+def sign_up():
+    return render_template('sign_up.html')
+
 @app.route('/db')
 @login_required
 def db():
