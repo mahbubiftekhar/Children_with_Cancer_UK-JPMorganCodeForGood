@@ -63,6 +63,8 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
 
 <!-- Footer -->
 
+<!-- Add Animations to this if I had time -->
+
 <footer class="custom-footer">
   <div class="row" id="footer_row">
     <div class="col s12 m5 offset-m7 l4 offset-l8" id="footer_row">
@@ -73,22 +75,30 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
       	<div class="chat_client_only">
       		<div class = "buddies_themselves">
 
-      		 <a>Chat</a>
+      		 <a id = "chatTitle" style="width:300px;">Chat</a>
+      		 <img style="margin-left = 20px;" class = "online_logo" src = "down_arrow.png">
 
       		</div>
 
       		<div class="first_sample_row">
-      			<a class = "chatTitle"> Leukemia</a>
+      			<a class = "chatName" style="margin-right: 20%;color : black;font-size: 20px;">Leukemia</a>
       			<a class = "people"> 3 active</a>
       			<img class = "online_logo" src = "online_circle.png">
       		</div>
-      		<div class = "black_line"></div> <!-- seperate the chats -->
-      		<div class="first_sample_row">
-      			<a class = "chatTitle"> Cancer</a>
+      		<div class = "black_line" style="height:2px;"></div> <!-- seperate the chats -->
+      		<div class="second_sample_row">
+      			<a class = "chatName2" style="margin-right: 20%;color : black; font-size: 20px;">Cancer &nbsp &nbsp	</a>
       			<a class = "people"> 8 active</a>
+      			<img class = "online_logo" src = "online_circle.png">
       		</div>
-      		<div class = "black_line"></div>
+      		<div class = "black_line" style="height:2px;"></div>
 
+      		<div class="second_sample_row">
+      			<a class = "chatName2" style="margin-right: 0%;color : black; font-size: 20px;">Athlete's Foot &nbsp</a>
+      			<a class = "people"> 0 Active</a>
+      			<img class = "online_logo" src = "offline_circle.png">
+      		</div>
+      		<div class = "black_line" style="height:2px;"></div>
 
       	</div>
 
@@ -110,7 +120,7 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
 <style>
 
 	.black_line {
-		background-color: black;
+		background-color: #4f92ff;
 		height: 23px;
 	}
 	
@@ -123,7 +133,20 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
 	}
 
 	.first_sample_row .people  {
-		margin-left: 180px;
+		margin-left: 10px;
+		font-size: 23px;
+		top:-100px;
+		color: black;
+	}
+	.second_sample_row .chatTitle  {
+		margin-right: 180px;
+		font-size: 23px;
+		margin-top: 30px;
+		color: black;
+	}
+
+	.second_sample_row .people  {
+		margin-left: 10px;
 		font-size: 23px;
 		top:-100px;
 		color: black;
@@ -136,7 +159,9 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
 			height :500px;
 			width: 300px;
 			background:white;
-			border:1px solid black;
+			border:1px solid #4f92ff;
+			border-radius: 30px 0px 0px 0px;
+
 			
 	}
 	
@@ -205,18 +230,49 @@ function myAccFunc() {
 //document.getElementById("myBtn").click();
 
  var something = document.getElementById('buddiesTopPart');
+ var chatSomething = document.getElementById('chatTitle');
 
  var clicked = 0;
  something.onclick = function() {
  	if (clicked == 1) {
- 	$('#btn.chat-bar').css({marginBottom:'-=500px'});
- 	$('.buddies_chat').css({marginBottom : '-=500px'});
+  	console.log("clicked first")
+ 	$('#btn.chat-bar').css({bottom:'-=500px'});
+ 	$('.buddies_chat').css({bottom : '-=500px'});
+ 	$('#buddiesTopPart').css({bottom : '-=500px'});
+
+
  	clicked--;
  	}
  	else {
- 	console.log("clicked");
- 	$('#btn.chat-bar').css({marginBottom: '+=500px'});
- 	$('.buddies_chat').css({marginBottom : '+=500px'});
+ 	console.log("clicked first")
+ 	$('#btn.chat-bar').css({bottom: '+=500px'});
+ 	$('.buddies_chat').css({bottom : '+=500px'});
+ 	$('#buddiesTopPart').css({bottom : '+=500px'});
+
+
+ 	clicked++;
+
+ }
+ }
+
+ var clicked = 0;
+ chatSomething.onclick = function() {
+ 	if (clicked == 1) {
+ 	console.log("clicked second")
+ 	$('#btn.chat-bar').css({bottom:'-=500px'});
+ 	$('.buddies_chat').css({bottom : '-=500px'});
+ 	$('#buddiesTopPart').css({bottom : '-=500px'});
+
+ 	
+
+ 	clicked--;
+ 	}
+ 	else {
+ 	console.log("clicked second");
+ 	$('#btn.chat-bar').css({bottom: '+=500px'});
+ 	$('.buddies_chat').css({bottom : '+=500px'});
+ 	$('#buddiesTopPart').css({bottom : '+=500px'});
+
 
  	clicked++;
 
