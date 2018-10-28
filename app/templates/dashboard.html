@@ -1,37 +1,21 @@
 {% extends "layout.html" %}{% block body %}
 
 <!-- Custom styles for this template -->
+
 <link rel="stylesheet" href="../static/CSS/dashboard.css">
 <!-- grid structe made with rows that have 12 columns in them-->
 <div class="row">
       <div class="col s2"></div> <!-- create a row with a header to have fewer empty rows-->
-      <div class="col s3"><h1 style="background-color:DodgerBlue"></h1></div>
+      <div class="col s3"><h3 style="background-color:DodgerBlue"></h3></div>
       <div class="col s2"></div><!-- in col sn, n is the number of columns allocation in that div-->
       <div class="col s3"></div>
       <div class="col s2"></div>
 </div>
 <div class="row">
-      <div class="col s2"></div>
-      <div class="col s3">
-      <h2 style="background-color:DodgerBlue"></h1>
-  	  </div>
-      <div class="col s2"></div>
-      <div class="col s3"></div>
-      <div class="col s2"></div>
-</div>
-<div class="row">
-      <div class="col s1.5"></div>
-      <div class="col s4">
-      <h2 style="background-color:DodgerBlue"></h1>
-  	  </div>
-      <div class="col s1"></div>
-      <div class="col s4"></div>
-      <div class="col s1.5"></div>
-</div>
-<div class="row">
       <div class="col s1"></div> <!--first row defined in dashboard.css, has profile picture-->
       <div class="col s4 boards top_left" href="{{ url_for('profile') }}">
-		  	<h2>Alex Shand</h2>
+        <a href= {{ url_for('profile') }}>
+		  	<h3>Alex Shand</h3>
             <div class="row">
               <div class="col s1"></div>
               <div class="col s4">
@@ -40,30 +24,34 @@
               <div class="col s5">
               <p>Edinburgh, UK</p>
               </div>
+              </a>
               <div class="col s1"></div>
-
             </div>
-		  	<p id="p01">Bio: This is Alex's Sample Bio, here he can tell us anything he wants to, about himself.</p>
 			</div>
   	  <div class="col s1"></div>
       <div class="col s4 boards top_right">
-		  	<h3>Sick Children Hospital</h3> <!-- sample article, possibly some help or support-->
-        <img src="../static/Images/hospital.jpg" height = 128>
-		  	<p id="p01">Information of the sick children hospital in Edinburgh</p>
+        <a href= {{ url_for('knowledgebase') }}>
+		  	<h2>Learning Zone</h2> <!-- sample article, possibly some help or support-->
+        <p id="p01">A place to find out anything you could want to know!</p>
 			</div>
+      </a>
   	  <div class="col s1"></div>
 </div>
 <div class="row">
       <div class="col s1"></div>
       <div class="col s4 boards bottom_left">
-		  	<h2>Royal Infirmary Hospital</h2>
-		  	<p id="p01">Here is some information about the Royal Infirmary Hospital in Edinburgh</p>
+        <a href= "https://www.cancerresearchuk.org/about-cancer/cancer-chat">
+		  	<h2>Advice Place</h2>
+		  	<p id="p01">You can ask any questions you have and have a community find answers for you!</p>
 			</div>
+      </a>
       <div class="col s1"></div>
       <div class="col s4 boards bottom_right">
+        <a href= {{ url_for('all_chat') }}>
 		  	<h2>All Chat</h2> <!-- talking about All chat-->
-		  	<p id="p01">A simple way to find a chat group to discuss anything you want. You will be assigned chat group randomly every time. Anyone you want to talk to again can be added as a buddy. You can speak to them again at any time. </p>
+		  	<p id="p01">Groups chat specific to anything you want that can help answer your questions or just to talk. </p>
   	  </div>
+      </a>
       <div class="col s1"></div>
 </div>
 <div class="row">
