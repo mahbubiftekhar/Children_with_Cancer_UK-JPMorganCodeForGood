@@ -12,10 +12,6 @@ from datetime import datetime
 
 chatrooms = defaultdict(list)
 
-#Chatroom.addNewChatroom('Battling Leukemia', datetime.utcnow(), None, 'Red', 'Battling Leukemia')
-#Chatroom.addNewChatroom('General Advice', datetime.utcnow(), None, 'Red', 'General Advice')
-#Chatroom.addNewChatroom('Hospital Treatment', datetime.utcnow(), None, 'Red', 'Hospital Treatment')
-
 def auth(email, key):
     user = Profile.getUserWithEmail(email)
     if user == None:

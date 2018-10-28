@@ -17,6 +17,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////tmp/app.db'
 database = SQLAlchemy(app)
 
 active_users = {}
+flaged_words = []
 
 def check_content_type(content_type):
     return request.headers['Content-Type'] != content_type
@@ -34,6 +35,9 @@ def send_message(user, msg):
             'msg'  : msg }
     socket.emit(f'chatroom_{user.chat_id}', data, broadcast=True)
 
+def flag_to_moderator(user, msg):
+    pass
+    
 @login_manager.user_loader
 def load_user(id):
     return active_users.get(id)
