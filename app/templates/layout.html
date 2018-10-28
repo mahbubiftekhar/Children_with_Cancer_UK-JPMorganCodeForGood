@@ -80,19 +80,17 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
       		<div class="first_sample_row">
       			<a class = "chatTitle"> Leukemia</a>
       			<a class = "people"> 3 active</a>
-      			<img src = "/images/online_circle.png">
+      			<img class = "online_logo" src = "online_circle.png">
       		</div>
       		<div class = "black_line"></div> <!-- seperate the chats -->
       		<div class="first_sample_row">
-      			<a class = "chatTitle"> Chat title 2 </a>
-      			<a class = "people"> 28 people</a>
+      			<a class = "chatTitle"> Cancer</a>
+      			<a class = "people"> 8 active</a>
       		</div>
       		<div class = "black_line"></div>
 
 
       	</div>
-
-	
 
 		<form class = "bottom_search_bar">
   			<input type="text" name="search" placeholder="Search..">
@@ -124,6 +122,13 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
 		color: black;
 	}
 
+	.first_sample_row .people  {
+		margin-left: 180px;
+		font-size: 23px;
+		top:-100px;
+		color: black;
+	}
+
 	.buddies_chat {
 			position: fixed;
     		right: 0px;
@@ -131,6 +136,7 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
 			height :500px;
 			width: 300px;
 			background:white;
+			border:1px solid black;
 			
 	}
 	
@@ -153,6 +159,10 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
 
 	}
 
+	.online_logo {
+		width:20px;
+		height: 20px;
+	}
 	input[type=text] {
     width: 130px;
     box-sizing: border-box;
@@ -173,7 +183,9 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
 	}
 
 	.bottom_search_bar {
-		margin-bottom: 0px;
+		position: absolute;
+  		bottom: 0;
+  		width: 300px;
 	}
 
 </style>
