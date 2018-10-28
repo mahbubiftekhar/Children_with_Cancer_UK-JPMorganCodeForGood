@@ -38,7 +38,7 @@ The Android app is available for download from the [Play Store](https://play.goo
 * **[Alex Shand](https://github.com/Alex-Shand)** 
 * **[Mahbub Iftekhar](https://www.mahbubiftekhar.co.uk/)** 
 * **[Rusab Abrez Asher](https://github.com/BerserkerLan)**
-* **[Siddharth CHandrashekar](https://github.com/sidchan-96)** 
+* **[Siddharth Chandrashekar](https://github.com/sidchan-96)** 
 * **[Stephen Waddell](https://github.com/ZeroSum24)** 
 * **[Sammy Knight](https://github.com/SamKnightGit)** 
 
