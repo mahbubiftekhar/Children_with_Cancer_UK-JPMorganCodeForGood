@@ -48,11 +48,7 @@
     <button id="btnSubmit" class="btn btn-lg btn-primary btn-block
      signin_btn" type="submit">Sign-Up</button>
 
-    {% if result==1 %}
-    <div id="myAlert" class="alert alert-success alert-dismissable" role="alert" style="margin-top:10px">
-      You have signed up!
-    </div>
-    {% elif result==-1 %}
+    {% if error%}
     <div id="myAlert" class="alert alert-warning alert-dismissable" role="alert" style="margin-top:10px">
       There was an error. Please try again later.
     </div>
