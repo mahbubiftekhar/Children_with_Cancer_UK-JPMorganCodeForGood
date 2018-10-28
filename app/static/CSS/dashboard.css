@@ -10,7 +10,7 @@ body {
 }
 
 .top_left {
-  background-color:blue;
+  background-color:lawngreen;
   color:white;
 }
 
@@ -28,6 +28,6 @@ body {
 }
 
 .bottom_right {
-  background-color:red;
+  background-color:hotpink;
   color:black;
 }
