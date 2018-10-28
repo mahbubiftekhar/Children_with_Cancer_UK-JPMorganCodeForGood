@@ -1,11 +1,5 @@
 from datetime import datetime
-from flask import Flask
-from flask_sqlalchemy import SQLAlchemy
-
-
-app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////tmp/badges.db'
-db = SQLAlchemy(app)
+from app import database as db
 
 class Badges(db.Model):
 	id = db.Column(db.Integer, primary_key=True, autoincrement=True)
@@ -22,9 +16,6 @@ class Badges(db.Model):
 		return db.session.query(Badges).get(bid)
 	
 db.create_all()
-#Functions tests
-print(Badges.addBadges("Completed a hackathon!","You have completed a hackathon! well done!"))
-print(Badges.getBadge(1))
 
 
 

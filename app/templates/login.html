@@ -25,7 +25,7 @@
     <button class="btn btn-lg btn-primary btn-block signin_btn" type="submit">Sign in</button>
   </form>
 </div>
-<div class="row form-signin signup_btn_row">
+<div class="row form-signin row_container_signin">
   {% if error %}
   <div class="alert alert-warning" role="alert" style="width:100%">
     <strong>Error:</strong> {{ error }}
@@ -33,9 +33,12 @@
   {% endif %}
 
   <a href="{{ url_for('sign_up') }}"
-  class="btn btn-lg btn-outline-light btn-block signup_btn" align='middle' role="button">Sign-Up</a>
+  class="btn btn-lg btn-outline-light btn-block signup_btn" align='middle'
+  role="button">Sign-Up</a>
+
 
 </div>
+<a href="{{ url_for('knowledgebase') }}">Sign-up Later</a>
 </div>
 
   <!-- Optional JavaScript -->

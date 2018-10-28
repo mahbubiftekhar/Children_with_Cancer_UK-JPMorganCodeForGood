@@ -1,11 +1,5 @@
 from datetime import datetime
-from flask import Flask
-from flask_sqlalchemy import SQLAlchemy
-
-
-app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////tmp/friends.db'
-db = SQLAlchemy(app)
+from app import database as db
 
 #This represents the relationship b/w two friends
 
@@ -27,10 +21,6 @@ class Friends(db.Model):
 
 	
 db.create_all()
-#Functions tests
-print(Friends.addFriends(1,3))
-print(Friends.addFriends(2,1))
-print(Friends.getUsersFriends(1))
 
 
 

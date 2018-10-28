@@ -1,11 +1,5 @@
 from datetime import datetime
-from flask import Flask
-from flask_sqlalchemy import SQLAlchemy
-
-
-app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////tmp/profile.db'
-db = SQLAlchemy(app)
+from app import database as db
 
 class Profile(db.Model):
 	id = db.Column(db.Integer, primary_key=True, autoincrement=True)
@@ -17,6 +11,21 @@ class Profile(db.Model):
 	password = db.Column(db.String(150), nullable=False) #This is stored in plaintext for now
 	chatroomID = db.Column(db.Integer, nullable = False)
 
+	@property
+	def is_active(self):
+		return True
+
+	@property
+	def is_authenticated(self):
+		return True
+
+	@property
+	def is_anonymous(self):
+		return False
+
+	def get_id(self):
+		return self.session_token
+
 	def __repr__(self):
         	return '<User %r>' % self.email
 
@@ -25,8 +34,13 @@ class Profile(db.Model):
 		db.session.add(profile)
 		db.session.commit()
 		return True
+    
+	def getUserWithEmail(email):
+		return Profile.query.filter_by(email=email).first()
+
 	def getUserDetails(uid):
 		return db.session.query(Profile).get(uid)
+
 	def deleteUserDetails(uid):
 		Profile.query.filter_by(id=uid).delete()
 		print("Deleted Profile with id " + str(uid))
@@ -39,14 +53,4 @@ class Profile(db.Model):
 		return False
 	
 db.create_all()
-#Functions tests
-print(Profile.addProfile("dog@hotmail.com","Moderator","jpmorganrox","Red",datetime.utcnow(),"password",3))
-print(Profile.addProfile("human@hotmail.com","Moderator","plzhiremeh","Red",datetime.utcnow(),"notpassword",5))
-print(Profile.getUserDetails(1))
-print(Profile.auth(1,"notpassword")) #Should return false
-print(Profile.auth(1,"password"))
-print(Profile.deleteUserDetails(1))
-
-
-
-
+Profile.addProfile("a@b.c", 'Moderator', 'Name', 'Red', datetime.utcnow(), 'q', 3)

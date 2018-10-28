@@ -58,15 +58,31 @@ body {
   margin-bottom: 0px
 }
 
+.confirm_btn {
+  background-color: #3E8EDE !important;
+}
+
 .signup_btn {
   display: block;
   margin-left: auto;
   margin-right: auto;
   width: 50%;
   background-color: #3E8EDE !important;
-  font-size: 90%;
+  font-size: 95%;
 }
 
-.signup_btn_row {
-  margin-top: 0px !important;
+.text_style {
+  color: #D7262E
+}
+
+.row_container_signin {
+  padding-top: 3px !important;
+}
+.row_container_signup {
+  padding-top: 0px !important;
+}
+
+.row_container {
+  padding-left: 0px !important;
+  padding-right: 0px !important;
 }
