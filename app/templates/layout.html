@@ -119,6 +119,10 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
 
 <style>
 
+#buddiesTopPart {
+	z-index : 2;
+}
+
 	.black_line {
 		background-color: #4f92ff;
 		height: 23px;
@@ -236,18 +240,18 @@ function myAccFunc() {
  something.onclick = function() {
  	if (clicked == 1) {
   	console.log("clicked first")
- 	$('#btn.chat-bar').css({bottom:'-=500px'});
+ 	$('.btn.chat-bar').css({bottom:'-=500px'});
  	$('.buddies_chat').css({bottom : '-=500px'});
- 	$('#buddiesTopPart').css({bottom : '-=500px'});
+ 	$('#buddiesTopPart').css({bottom : '-=700px'});
 
 
  	clicked--;
  	}
  	else {
  	console.log("clicked first")
- 	$('#btn.chat-bar').css({bottom: '+=500px'});
+ 	$('.btn.chat-bar').css({bottom: '+=500px'});
  	$('.buddies_chat').css({bottom : '+=500px'});
- 	$('#buddiesTopPart').css({bottom : '+=500px'});
+ 	$('#buddiesTopPart').css({bottom : '+=700px'});
 
 
  	clicked++;
@@ -259,9 +263,9 @@ function myAccFunc() {
  chatSomething.onclick = function() {
  	if (clicked == 1) {
  	console.log("clicked second")
- 	$('#btn.chat-bar').css({bottom:'-=500px'});
+ 	$('.btn.chat-bar').css({bottom:'-=500px'});
  	$('.buddies_chat').css({bottom : '-=500px'});
- 	$('#buddiesTopPart').css({bottom : '-=500px'});
+ 	$('#buddiesTopPart').css({bottom : '-=700px'});
 
  	
 
@@ -269,9 +273,9 @@ function myAccFunc() {
  	}
  	else {
  	console.log("clicked second");
- 	$('#btn.chat-bar').css({bottom: '+=500px'});
+ 	$('.btn.chat-bar').css({bottom: '+=500px'});
  	$('.buddies_chat').css({bottom : '+=500px'});
- 	$('#buddiesTopPart').css({bottom : '+=500px'});
+ 	$('#buddiesTopPart').css({bottom : '+=700px'});
 
 
  	clicked++;
