@@ -26,7 +26,7 @@ def check_content_type(content_type):
 
 def have_keys(info, keys):
     return (set(info.keys()) & keys) != keys
-        
+
 def leave_chat(user):
     chatroom = get_chatroom_by_id(user.chat_id)
     user.chat_id = None
@@ -39,7 +39,7 @@ def send_message(user, msg):
 
 def flag_to_moderator(user, msg):
     pass
-    
+
 @login_manager.user_loader
 def load_user(id):
     return active_users.get(id)
@@ -87,7 +87,7 @@ def sign_up():
 @app.route('/dashboard')
 @login_required
 def dashboard():
-    return render_template('dashboard.html')
+    return render_template('profile.html')
 
 @app.route('/knowledgebase')
 def knowledgebase():
