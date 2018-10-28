@@ -17,6 +17,14 @@ database = SQLAlchemy(app)
 
 active_users = {}
 
+def check_content_type(content_type):
+    if request.headers['Content-Type'] != content_type:
+        abort(404)
+
+def have_keys(info, keys):
+    if (info.keys & keys) != keys:
+        abort(404)
+        
 def leave_chat(user):
     chatroom = get_chatroom_by_id(user.chat_id)
     user.chat_id = None
@@ -36,10 +44,8 @@ def login():
     if request.method == 'GET':
         return render_template('login.html')
     else:
-        if request.headers['Content-Type'] != 'application/x-www-form-urlencoded':
-            abort('Incorrect data format')
-        if 'inputEmail' not in request.form or 'inputPassword' not in request.form:
-            abort('Missing username or password')
+        check_content_type('application/x-www-form-urlencoded')
+        have_keys(request.form, {'inputEmail', 'inputPassword'})
         username = request.form['inputEmail']
         password = request.form['inputPassword']
         user = auth(username, password)
@@ -51,6 +57,11 @@ def login():
         else:
             return redirect(url_for("login"))
 
+@app.route('/sign_up', methods = ['GET', 'POST'])
+def sign_up():
+    if request.method == 'GET':
+        return render_template('
+        
 @app.route('/db')
 @login_required
 def db():
