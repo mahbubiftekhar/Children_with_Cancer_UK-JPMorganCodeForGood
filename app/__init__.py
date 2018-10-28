@@ -37,7 +37,7 @@ def load_user(id):
 @app.route('/', methods = ['GET', 'POST'])
 def login():
     if request.method == 'GET':
-        return render_template('login.html')
+        return render_template('messagePage.html')
     else:
         if request.headers['Content-Type'] != 'application/x-www-form-urlencoded':
             abort('Incorrect data format')
