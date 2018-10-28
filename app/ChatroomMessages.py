@@ -1,11 +1,5 @@
 from datetime import datetime
-from flask import Flask
-from flask_sqlalchemy import SQLAlchemy
-
-
-app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////tmp/chatroommessages.db'
-db = SQLAlchemy(app)
+from app import database as db
 
 class ChatroomMessages(db.Model):
 	id = db.Column(db.Integer, primary_key=True, autoincrement=True)
@@ -23,6 +17,3 @@ class ChatroomMessages(db.Model):
 		return ChatroomMessages.query.filter_by(chatroomID=cid)
 
 db.create_all() #Call this before doing any database stuff
-#Testing stuff
-print(ChatroomMessages.addChatroomMessage(1,"Hi",4,datetime.utcnow()))
-print(ChatroomMessages.getChatroomMessages(1))

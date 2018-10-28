@@ -1,6 +1,7 @@
 from flask import Flask, json, request, url_for, redirect, abort, render_template
 from flask_login import UserMixin, LoginManager, login_user, login_required, current_user, logout_user
 from flask_socketio import SocketIO
+from flask_sqlalchemy import SQLAlchemy
 import uuid
 from datahelper import *
 import os
@@ -11,14 +12,10 @@ login_manager = LoginManager()
 login_manager.init_app(app)
 login_manager.login_view = 'login'
 socket = SocketIO(app)
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////tmp/app.db'
+database = SQLAlchemy(app)
 
 active_users = {}
-
-class User(UserMixin):
-    def __init__(self):
-        self.name = "Steve"
-        self.id = str(uuid.uuid4())
-        self.chat_id = None
 
 def leave_chat(user):
     chatroom = get_chatroom_by_id(user.chat_id)
@@ -26,7 +23,7 @@ def leave_chat(user):
     chatroom.users.remove(user)
 
 def send_message(user, msg):
-    data = {'name' : user.name,
+    data = {'name' : user.username,
             'msg'  : msg }
     socket.emit(f'chatroom_{user.chat_id}', data, broadcast=True)
 
@@ -45,12 +42,11 @@ def login():
             abort('Missing username or password')
         username = request.form['inputEmail']
         password = request.form['inputPassword']
-        print(username)
-        print(password)
-        if auth(username, password):
-            user = User()
+        user = auth(username, password)
+        if user:
+            user.session_token = uuid.uuid4()
             login_user(user)
-            active_users[user.id] = user
+            active_users[user.session_token] = user
             return redirect(url_for("db"))
         else:
             return redirect(url_for("login"))
@@ -58,7 +54,6 @@ def login():
 @app.route('/db')
 @login_required
 def db():
-    print("Here")
     return "good boi, logged in"
 
 @app.route('/kb')
@@ -81,6 +76,7 @@ def logout():
 @login_required
 def all_chat():
     chatrooms = get_free_chatrooms(get_chatrooms())
+    print(chatrooms)
     return "chatrooms"
 
 @app.route('/chat/<int:id>', methods = ['GET', 'POST'])
@@ -88,6 +84,8 @@ def all_chat():
 def chat(id):
     if request.method == 'GET':
         chatroom = get_chatroom_by_id(id)
+        if not chatroom:
+            abort(404)
         chatroom.users.append(current_user)
         current_user.chat_id = id
         return f'In chat {id}'

@@ -1,11 +1,5 @@
 from datetime import datetime
-from flask import Flask
-from flask_sqlalchemy import SQLAlchemy
-
-
-app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////tmp/userbadges.db'
-db = SQLAlchemy(app)
+from app import database as db
 
 class UserBadges(db.Model):
 	id = db.Column(db.Integer, primary_key=True, autoincrement=True)
@@ -19,8 +13,6 @@ class UserBadges(db.Model):
 		return True
 	
 db.create_all()
-#Functions tests
-print(UserBadges.addUserBadges(1,4))
 
 
 
