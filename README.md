@@ -1,12 +1,13 @@
 
 </span> </strong></span></h1>
-<p style="text-align: center;">&nbsp;</p>
+<p style="text-align: center;">&nbsp;
 <p align="center">
  
 <img alt="JP Morgan CODE FOR GOOD 2018" src="/IMAGES/jp.jpg">
 
 <h1  align="center" style="text-align: center;"><span  align="center" style="color: #ff0000;"><strong><span align="center" style="color: #FF0000;">CODE FOR GOOD 2018
 </p>
+ </p>
  
 ## JP CODE FOR GOOD - 2018 
 This is a competitive 24 hour coding competition to deliver a scalable solution to a NGO. In this program, you collaborate with other coders to develop innovative technology solutions for non-profit organizations. You’ll also learn about starting a Technology career with us while being guided by the sharpest minds in our industry.
