@@ -1,5 +1,5 @@
 
-<h1  align="center" style="text-align: center;"><span  align="center" style="color: #ff0000;"><strong><span align="center" style="color: #FF0000;"> JP MORGAN CODE FOR GOOD 2018
+<h1  align="center" style="text-align: center;"><span  align="center" style="color: #ff0000;"><strong><span align="center" style="color: #FF0000;"> 
 </span> </strong></span></h1>
 <p style="text-align: center;">&nbsp;</p>
 <p align="center">
@@ -9,7 +9,7 @@
 
  
 ## JP CODE FOR GOOD - 2018 
-This is a competitive 24 hour coding competition to deliver a scalable solution to a NGO. In this program, you collaborate with other coders to develop innovative technology solutions for non-profit organizations. You’ll also learn about starting a Technology career with us while being guided by the sharpest minds in our industry.
+This is a competitive 24 hour coding competition to deliver a scalable solution to a NGO. This was done in JP Morgans Glasgow office. In this program, you collaborate with other coders to develop innovative technology solutions for non-profit organizations. You’ll also learn about starting a Technology career with us while being guided by the sharpest minds in our industry.
 
 
 ## The Charity
@@ -26,19 +26,19 @@ The mission for Children with Cancer UK is to improve survival rates and the qua
 <img alt="App image - SettingsActivity" src="/APPIMAGES/setting.png" width="30%">
 <img alt="App image - SettingsActivity" src="/APPIMAGES/settings2.png" width="30%">
 <img alt="App image - Splash" src="/APPIMAGES/SPLASH.png" width="30%">
-<img alt="App image - Contact" src="/APPIMAGES/CONTACT.png" width="30%"> --> 
+<img alt="App image - Contact" src="/APPIMAGES/CONTACT.png" width="30%"
 
 
 </div>
 
 
 ## Technologies Used
-Frontend:
+## Frontend:
 [Python 3.7](https://www.python.org/downloads/release/python-370/)
 [CSS (Bootstrap)](https://www.w3schools.com/bootstrap/bootstrap_ref_all_classes.asp)
 [Jquery](https://jquery.com)
 [socketIO](https://socket.io/)
-Backend
+## Backend
 [Flask](http://flask.pocoo.org/)
 [Flask-Login](https://flask-login.readthedocs.io/en/latest/)
 [Flask-Sqlachemy](http://flask-sqlalchemy.pocoo.org/2.3/)
