@@ -41,25 +41,25 @@ The purpose of the web application was to offer the following:
 
 ## Technologies Used
 ## Frontend:
-[Python 3.7](https://www.python.org/downloads/release/python-370/)
-[CSS (Bootstrap)](https://www.w3schools.com/bootstrap/bootstrap_ref_all_classes.asp)
-[Jquery](https://jquery.com)
-[socketIO](https://socket.io/)
+[Python 3.7](https://www.python.org/downloads/release/python-370/) <br />
+[CSS (Bootstrap)](https://www.w3schools.com/bootstrap/bootstrap_ref_all_classes.asp) <br />
+[Jquery](https://jquery.com) <br />
+[socketIO](https://socket.io/) <br />
 ## Backend
-[Flask](http://flask.pocoo.org/)
-[Flask-Login](https://flask-login.readthedocs.io/en/latest/)
-[Flask-Sqlachemy](http://flask-sqlalchemy.pocoo.org/2.3/)
-[Flask-SOcketIO](https://flask-socketio.readthedocs.io/en/latest/)
+[Flask](http://flask.pocoo.org/) <br />
+[Flask-Login](https://flask-login.readthedocs.io/en/latest/) <br />
+[Flask-Sqlachemy](http://flask-sqlalchemy.pocoo.org/2.3/) <br />
+[Flask-SOcketIO](https://flask-socketio.readthedocs.io/en/latest/) 
 
 
 ## Software Developers
 
-* **[Alex Shand](https://github.com/Alex-Shand)**
-* **[Mahbub Iftekhar](https://www.mahbubiftekhar.co.uk/)**
-* **[Rusab Abrez Asher](https://github.com/BerserkerLan)**
-* **[Siddharth Chandrashekar](https://github.com/sidchan-96)**
-* **[Stephen Waddell](https://github.com/ZeroSum24)**
-* **[Sammy Knight](https://github.com/SamKnightGit)**
+* **[Alex Shand](https://github.com/Alex-Shand)** <br />
+* **[Mahbub Iftekhar](https://www.mahbubiftekhar.co.uk/)** <br />
+* **[Rusab Abrez Asher](https://github.com/BerserkerLan)** <br />
+* **[Siddharth Chandrashekar](https://github.com/sidchan-96)** <br />
+* **[Stephen Waddell](https://github.com/ZeroSum24)** <br />
+* **[Sammy Knight](https://github.com/SamKnightGit)** <br />
 
 ## CODE LICESNSE - MIT
 
