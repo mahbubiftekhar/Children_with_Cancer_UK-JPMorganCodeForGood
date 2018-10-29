@@ -26,13 +26,12 @@ The purpose of the web application was to offer the following:
 - Provide an immediate community to interact, socialize and share experiences    
 - Signposting valuable information to all user groups
 
-[![Video Demo](/IMAGES/jp.jpg)](https://youtu.be/boBYm-C_7HY)
+[![Video Demo]](https://youtu.be/boBYm-C_7HY)
 
 
 --<div style="display:flex;">
-<img alt="" src="/IMAGES/screen1.png">
-<img alt="" src="/IMAGES/screen2.png">
-
+[![Video Demo]](/IMAGES/screen1.png)
+[![Video Demo]](/IMAGES/screen2.png)
 
 
 </div>
