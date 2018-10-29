@@ -4,11 +4,12 @@
 <p align="center">
  
 <img alt="JP Morgan CODE FOR GOOD 2018" src="/IMAGES/jp.jpg">
-</p>
-<h1  align="center" style="text-align: center;"><span  align="center" style="color: #ff0000;"><strong><span align="center" style="color: #FF0000;">CODE FOR GOOD 2018
 
+<h1  align="center" style="text-align: center;"><span  align="center" style="color: #ff0000;"><strong><span align="center" style="color: #FF0000;">CODE FOR GOOD 2018
+</p>
+ 
 ## JP CODE FOR GOOD - 2018 
-In this program, you collaborate with other coders to develop innovative technology solutions for non-profit organizations. You’ll also learn about starting a Technology career with us while being guided by the sharpest minds in our industry.
+This is a competitive 24 hour coding competition to deliver a scalable solution to a NGO. In this program, you collaborate with other coders to develop innovative technology solutions for non-profit organizations. You’ll also learn about starting a Technology career with us while being guided by the sharpest minds in our industry.
 
 
 ## The Charity
@@ -16,6 +17,8 @@ In this program, you collaborate with other coders to develop innovative technol
 <img alt="JP Morgan CODE FOR GOOD 2018" src="/IMAGES/childrenWIthCancer.png">
 
 The mission for Children with Cancer UK is to improve survival rates and the quality of survival in young cancer patients and to find ways to prevent cancer in the future.
+
+## OUR GOAL
 
 <!--<div style="display:flex;">
 <img alt="App image - MainActivity" src="/APPIMAGES/mainScreen.png" width="30%">
@@ -29,8 +32,17 @@ The mission for Children with Cancer UK is to improve survival rates and the qua
 </div>
 
 
-## Technologies Used 
+## Technologies Used
+Frontend:
 [Python 3.7](https://www.python.org/downloads/release/python-370/)
+[CSS (Bootstrap)](https://www.w3schools.com/bootstrap/bootstrap_ref_all_classes.asp)
+[Jquery](https://jquery.com)
+[socketIO](https://socket.io/)
+Backend
+[Flask](http://flask.pocoo.org/)
+[Flask-Login](https://flask-login.readthedocs.io/en/latest/)
+[Flask-Sqlachemy](http://flask-sqlalchemy.pocoo.org/2.3/)
+[Flask-SOcketIO](https://flask-socketio.readthedocs.io/en/latest/)
 
 
 ## Software Developers
