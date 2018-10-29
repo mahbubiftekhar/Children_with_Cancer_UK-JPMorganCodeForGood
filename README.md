@@ -26,8 +26,9 @@ The purpose of the web application was to offer the following:
 - Provide an immediate community to interact, socialize and share experiences    
 - Signposting valuable information to all user groups
 
-Here is a video demo of the web app:
-![Video Demo](/IMAGES/ChildrenWithCancer.png)(https://youtu.be/boBYm-C_7HY)
+![Here is a video demo of the web app:](https://youtu.be/boBYm-C_7HY)
+
+[![Watch the video](/IMAGES/ChildrenWithCancer.png)](https://youtu.be/boBYm-C_7HY)
 
 
 --<div style="display:flex;">
