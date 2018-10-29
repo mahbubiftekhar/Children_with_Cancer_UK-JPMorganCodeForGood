@@ -1,9 +1,12 @@
 
+<h1  align="center" style="text-align: center;"><span  align="center" style="color: #ff0000;"><strong><span align="center" style="color: #FF0000;"> 
 </span> </strong></span></h1>
-<p style="text-align: center;">&nbsp;
+<p style="text-align: center;">&nbsp;</p>
 <p align="center">
  
 <img alt="JP Morgan CODE FOR GOOD 2018" src="/IMAGES/jp.jpg">
+</p>
+
 
 <h1  align="center" style="text-align: center;"><span  align="center" style="color: #ff0000;"><strong><span align="center" style="color: #FF0000;">CODE FOR GOOD 2018
 </p>
