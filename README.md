@@ -1,5 +1,5 @@
 
-<h1  align="center" style="text-align: center;"><span  align="center" style="color: #ff0000;"><strong><span align="center" style="color: #FF0000;"> JP MORGAN CODE FOR GOOD - GROUP 5
+<h1  align="center" style="text-align: center;"><span  align="center" style="color: #ff0000;"><strong><span align="center" style="color: #FF0000;"> JP MORGAN CODE FOR GOOD - TEAM 5
 </span> </strong></span></h1>
 <p style="text-align: center;">&nbsp;</p>
 <p align="center">
@@ -8,13 +8,12 @@
 </p>
 
 
-## JP CODE FOR GOOD - 2018
-This is a competitive 24 hour coding competition to deliver a scalable solution to a NGO. In this program, you collaborate with other coders to develop innovative technology solutions for non-profit organizations. You’ll also learn about starting a Technology career with us while being guided by the sharpest minds in our industry.
+This was a competitive 24 hour coding competition were we delivered a scalable solution to a Non-Governmental Organisation. In this program, we collaborated with other coders in a team to develop an innovative technological solution for a non-profit organization - Children with Cancer UK. 
 
 
 ## The Charity
 [Children with Cancer UK](https://www.childrenwithcancer.org.uk/)
-<img alt="JP Morgan CODE FOR GOOD 2018" src="/IMAGES/childrenWIthCancer.png">
+<img alt="JP Morgan CODE FOR GOOD 2018" src="/IMAGES/childrenWIthCancer.png" width="600" height="250">
 
 The mission for Children with Cancer UK is to improve survival rates and the quality of survival in young cancer patients and to find ways to prevent cancer in the future.
 
