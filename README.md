@@ -8,7 +8,7 @@
 </p>
 
 
-This was a competitive 24 hour coding competition were we delivered a scalable solution to a Non-Governmental Organisation. In this program, we collaborated with other coders in a team to develop an innovative technological solution for a non-profit organization - Children with Cancer UK. 
+This was a competitive 24-hour coding competition where we delivered a scalable solution to a Non-Governmental Organisation. In this program, we collaborated with other coders in a team to develop an innovative technological solution for a non-profit organisation - Children with Cancer UK. 
 
 
 ## The Charity
@@ -22,7 +22,7 @@ The mission for Children with Cancer UK is to improve survival rates and the qua
 The purpose of the web application was to offer the following:
 
 - A platform for supporting children and their loved ones through any related hardship
-- Provide an immediate community to interact, socialize and share experiences    
+- Provide an immediate community to interact, socialise and share experiences    
 - Signposting valuable information to all user groups
 
 [Here is a video demo of the web app:](https://youtu.be/boBYm-C_7HY)
@@ -44,7 +44,7 @@ The purpose of the web application was to offer the following:
 [CSS (Bootstrap)](https://www.w3schools.com/bootstrap/bootstrap_ref_all_classes.asp) <br />
 [Jquery](https://jquery.com) <br />
 [socketIO](https://socket.io/) <br />
-## Backend
+## Backend:
 [Flask](http://flask.pocoo.org/) <br />
 [Flask-Login](https://flask-login.readthedocs.io/en/latest/) <br />
 [Flask-Sqlachemy](http://flask-sqlalchemy.pocoo.org/2.3/) <br />
