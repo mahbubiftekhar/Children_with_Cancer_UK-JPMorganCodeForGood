@@ -27,7 +27,7 @@ The purpose of the web application was to offer the following:
 
 [Here is a video demo of the web app:](https://youtu.be/boBYm-C_7HY)
 
-[![Watch the video](/IMAGES/ChildrenWithCancer.png)](https://youtu.be/boBYm-C_7HY)
+[![Watch the video](/IMAGES/ChildrenWithCancer.png)](https://youtu.be/vrn5CEWUDhs)
 
 
 --<div style="display:flex;">
